@@ -1,18 +1,8 @@
    <!-- Start Header -->
-<header id="header" class="header-2 dark-header" style="height: 15vh;">
+<header id="header" class="header-2 dark-header" style="height: 15vh; z-index: 1000;">
 
 	<div class="container wrap-header" style="height: 100%;">
-    
-        <!-- Logo -->
-        {{-- <div id="logo">
-            <a href="#"><img alt="" src="https://zoomarts.works/html/relway/images/dark-logo.png" /></a>
-        </div> --}}
-        
-        <!-- Toggle Menu - Responsive -->
-        {{-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu"><i class="icon-menu2"></i></button> --}}
-        
-        {{-- <img alt="" src="public/upload/info/logo-main.png" /> --}}
-        
+               
         <div id="header-info" style="height: 40%;">
             <div class="grid-header-item slogan">
                 <span>
@@ -43,13 +33,13 @@
 
         <div id="nav-menu" class="" style="height: 60%;">
             <div class="active menu-item">
-                <a href="#home"><span class="menu-name">Home</span></a>
+                <a href="#home" class=""><span class="menu-name">Home</span></a>
             </div>
             <div class="menu-item">
-                <a href="#why-us"><span class="menu-name">Why us</span></a>
+                <a href="#why-us"><span class="menu-name">@lang('messages.menu_why_us')</span></a>
             </div>
             <div class="menu-item">
-                <a href="#our-service"><span class="menu-name">Services</span></a>
+                <a href="#our-service"><span class="menu-name">@lang('messages.menu_services')</span></a>
             </div>
             <div class="menu-item">
                 <a href="#home">
@@ -58,13 +48,20 @@
                 </a>
             </div>
             <div class="menu-item">
-                <a href="#our-projects"><span class="menu-name">Projects</span></a>
+                <a href="#our-projects"><span class="menu-name">@lang('messages.menu_projects')</span></a>
             </div>
             <div class="menu-item">
-                <a href="#contact-us"><span class="menu-name">Contact</span></a>
+                <a href="#contact-us"><span class="menu-name">@lang('messages.menu_contact_us')</span></a>
             </div>
-            <div class="menu-item">
-                <a href="#home"><span class="menu-name">Languages</span></a>
+            <div id="lang-tag" class="menu-item">
+                <a><span class="menu-name">Languages</span></a>
+                <div class="lang-items">
+                    <div class="lang-item"><a href="{!! route('user.change-language', ['vi']) !!}" >Tiếng Việt</a></div>
+                    <div class="lang-item"><a href="{!! route('user.change-language', ['en']) !!}" >English</a></div>
+                    <div class="lang-item"><a href="{!! route('user.change-language', ['zh']) !!}">中 文</a></div>
+                    <div class="lang-item"><a href="{!! route('user.change-language', ['ja']) !!}">日 本 語</a></div>
+                    <div class="lang-item"><a href="{!! route('user.change-language', ['kr']) !!}">한국어</a></div>
+                </div>
             </div>
         </div>
 

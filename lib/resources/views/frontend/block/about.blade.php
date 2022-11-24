@@ -78,6 +78,8 @@
     {{-- End timeline --}}
       
     <div id="why-us"></div>
+
+    <h2 class="section-title" style="position: relative; top: -19px;">Why us</h2>
  
     <div class="container why-us-wrap" >
         <div class="tabs ">

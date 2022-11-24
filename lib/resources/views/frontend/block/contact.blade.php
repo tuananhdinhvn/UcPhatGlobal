@@ -1,12 +1,9 @@
 <!-- Start Contact Section -->
 <div id="contact-us"></div>
 <h2 class="section-title" style="margin-top: 100px">Contact us</h2>
-<div id="contact" class="section contact-section light-section" style="padding-top:80px; padding-bottom:80px; background:#fff; border-bottom: #111 1px;">
+<div id="contact" class="section contact-section light-section" style="padding-top:20px; background:#fff; border-bottom: #111 1px;">
 
-	<div class="container">
-        
-     
-    
+	<div class="container" style="margin-bottom: 20px;">
     	<div class="row">
         
             <!-- Info Box -->
@@ -62,6 +59,11 @@
         </div>
         
     </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3021971048356!2d106.6949471153208!3d10.788150861925883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3521078af5%3A0x10a2df92c620eeae!2zMTQwIMSQLiBOZ3V54buFbiBWxINuIFRo4bunLCDEkGEgS2FvLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1669276700248!5m2!1sen!2s" 
+    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+    style="position: relative; bottom: -10px;"></iframe>
+
     
 </div>
 <!-- End Contact Section -->

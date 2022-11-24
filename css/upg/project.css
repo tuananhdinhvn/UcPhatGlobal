@@ -48,11 +48,28 @@ body {
 .menu-top .menu-top-right .corp-code{
     width: 40%;
     float: left;
+    height: 100%;
+    position: relative;
+    right: -40px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #000;
+    padding-top: 15px;
+}
+.menu-top .menu-top-right .corp-code .sorp-code-signal{
+    font-size: 3rem;
 }
 .menu-top .menu-top-right .news{
     width: 60%;
     text-align: center;
     float: right;
+    height: 100%;
+    vertical-align: middle;
+    padding-top: 20px;
+    font-style: italic;
+}
+.menu-top .menu-top-right .news p{
+    font-size: 1.5rem;
 }
 
 .menu-bot{
@@ -75,6 +92,13 @@ body {
     left: 0;
     right: 0;
 }
+.menu-bot .menu-item .logo-slogan{
+    text-decoration: none;
+    color: #ffbd00;
+}
+.menu-bot .menu-item a{
+    text-decoration: none;
+}
 .menu-bot .menu-item .logo-main{
     position: fixed;
     top: 0.2vh;
@@ -84,6 +108,39 @@ body {
 .menu-bot .menu-item img{
     width: 140px;
 }
+
+.lang-menu{
+
+}
+.lang-menu .lang-items{
+    position: absolute;
+    background: #fff;
+    height: 250px;
+    padding: 0px 0px;
+    bottom: -255px;
+    display: none;
+    width: 100%;
+}
+.lang-menu:hover .lang-items{
+    display: block;
+}
+.lang-menu .lang-items .lang-item{
+    height: 50px;
+}
+.lang-menu .lang-items .lang-item a{
+    color: #000;
+    font-weight: 800;
+    font-family: Arial;
+    font-size: 1.4rem;
+    position: relative;
+    top: 15px;
+    text-decoration: none;
+    top: 22px;
+}
+.lang-menu .lang-items .lang-item a:hover{
+    color: #428bff;
+}
+
 
 .project-label-wrap{
     background: #428bff;
@@ -121,7 +178,7 @@ body {
     height: 100%;
     text-align: center;
     vertical-align: middle;
-    padding-top: 40%;
+    padding-top: 20%;
     opacity: 0;
     transform: translate3d(-50px, 0, 0);
     transition: 0.25s all ease-in-out;

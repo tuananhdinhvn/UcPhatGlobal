@@ -125,26 +125,36 @@
 </head>
 <body>
 
-    {{-- @include('frontend.block.page_loader') --}}
+    @include('frontend.block.page_loader')
     
     @include('frontend.block.welcome_home')
     
     @include('frontend.block.header')
 
-    @include('frontend.block.about')
+    <div class="section">
+        @include('frontend.block.about')
+    </div>
+    
 
     {{-- @include('frontend.block.client') --}}
 
     {{-- @include('frontend.block.video') --}}
 
-    @include('frontend.block.service')
+    <div class="section">
+        @include('frontend.block.service')
+    </div>
     
-
-    @include('frontend.block.project')
+    
+    <div class="section">
+        @include('frontend.block.project')
+    </div>
+    
   
     
-
-    @include('frontend.block.contact')
+    <div class="section">
+        @include('frontend.block.contact')
+    </div>
+    
     
     @include('frontend.block.footer')
     

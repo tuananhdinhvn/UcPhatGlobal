@@ -60,25 +60,43 @@
             <div class="menu-top">
                 <div class="menu-top-left">Turkey project solution<br/>We buils assets</div>
                 <div class="menu-top-right">
-                    <div class="corp-code">Corp code</div>
-                    <div class="news">news</div>
+                    <div class="corp-code">Corp code: <br/><span class="sorp-code-signal">UPG</span></div>
+                    <div class="news">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        </p>
+                    </div>
                 </div>
 
             </div>
 
             <div class="menu-bot">
-                <h3 class="menu-item"><span>Home</span> </h3>
-                <h3 class="menu-item"><span>Why us</span> </h3>
-                <h3 class="menu-item"><span>Service</span></h3>
+                <h3 class="menu-item"><span><a href="{{ asset('/')}}">Home</a></span></h3>
+                <h3 class="menu-item"><span><a href="{{ asset('/#why-us')}}">@lang('messages.menu_why_us')</a></span> </h3>
+                <h3 class="menu-item"><span><a href="{{ asset('/#our-service')}}">@lang('messages.menu_services')</a></span></h3>
                 <h3 class="menu-item">
-                    <div class="logo-main">
-                        <img src="http://localhost/UPG/public/upload/info/logo-main.png" alt="">
-                    </div>
-                    <span>Uc phat global</span>
+                    
+                        <div class="logo-main">
+                            <a href="{{ asset('/')}}">
+                                <img src="public/upload/info/logo-main.png" alt="">
+                            </a>
+                        </div>
+                        <a href="{{ asset('/')}}">
+                            <span class="logo-slogan">Uc phat global</span>
+                        </a>
+                        
                 </h3>
-                <h3 class="menu-item"><span>Project</span></h3>
-                <h3 class="menu-item"><span>Contact</span></h3>
-                <h3 class="menu-item"><span>Language</span></h3>
+                <h3 class="menu-item"><span><a href="{{ asset('/#our-projects')}}">@lang('messages.menu_projects')</a></span></h3>
+                <h3 class="menu-item"><span><a href="{{ asset('/#contact-us')}}">@lang('messages.menu_contact_us')</a></span></h3>
+                <h3 class="menu-item lang-menu"><span><a>Language</a></span>
+                    <div class="lang-items">
+                        <div class="lang-item"><a href="{!! route('user.change-language', ['vi']) !!}" >Tiếng Việt</a></div>
+                        <div class="lang-item"><a href="{!! route('user.change-language', ['en']) !!}" >English</a></div>
+                        <div class="lang-item"><a href="{!! route('user.change-language', ['zh']) !!}">中 文</a></div>
+                        <div class="lang-item"><a href="{!! route('user.change-language', ['ja']) !!}">日 本 語</a></div>
+                        <div class="lang-item"><a href="{!! route('user.change-language', ['kr']) !!}">한국어</a></div>
+                    </div>
+                </h3>
             </div>
         </div>
         
@@ -104,45 +122,48 @@
             <div class="project-item-cover">
                 Project name
             </div>
-            <img src="https://img.redbull.com/images/c_crop,x_535,y_0,h_2999,w_1800/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2015/07/27/1331737542701_2/moon-hill-natural-bridge-in-china" alt="">
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
         </div>
         <div class="project-item">
             <div class="project-item-cover">
                 Project name
             </div>
-            <img src="https://img.redbull.com/images/c_crop,x_535,y_0,h_2999,w_1800/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2015/07/27/1331737542701_2/moon-hill-natural-bridge-in-china" alt="">
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
         </div>
         <div class="project-item">
             <div class="project-item-cover">
                 Project name
             </div>
-            <img src="https://img.redbull.com/images/c_crop,x_535,y_0,h_2999,w_1800/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2015/07/27/1331737542701_2/moon-hill-natural-bridge-in-china" alt="">
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
         </div>
         <div class="project-item">
             <div class="project-item-cover">
                 Project name
             </div>
-            <img src="https://img.redbull.com/images/c_crop,x_535,y_0,h_2999,w_1800/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2015/07/27/1331737542701_2/moon-hill-natural-bridge-in-china" alt="">
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
         </div>
         <div class="project-item">
             <div class="project-item-cover">
                 Project name
             </div>
-            <img src="https://img.redbull.com/images/c_crop,x_535,y_0,h_2999,w_1800/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2015/07/27/1331737542701_2/moon-hill-natural-bridge-in-china" alt="">
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
         </div>
         <div class="project-item">
             <div class="project-item-cover">
                 Project name
             </div>
-            <img src="https://img.redbull.com/images/c_crop,x_535,y_0,h_2999,w_1800/c_fill,w_400,h_540/q_auto:low,f_auto/redbullcom/2015/07/27/1331737542701_2/moon-hill-natural-bridge-in-china" alt="">
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
         </div>
-
+        <div class="project-item">
+            <div class="project-item-cover">
+                Project name
+            </div>
+            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
+        </div>
+        
     </div>
-
     
     
-
-       
 <!-- Start Footer -->
 <div id="footer" class="section footer-section light-section">
 
@@ -157,7 +178,6 @@
                 <!-- Copyright -->
                 <div class="copyright">All rights reserved. Copyright © 2022 <a class="accent-color" href="#">TuanAnhDinh.vn</a></div>
                 <!-- Social Icons -->
-                
             </div>
         
         </div>
@@ -168,8 +188,7 @@
 <!-- End Footer -->
 
 
-
-
+<script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.min.js"></script>
 
 </body>
 </html>

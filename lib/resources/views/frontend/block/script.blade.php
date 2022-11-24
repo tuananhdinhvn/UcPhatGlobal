@@ -16,12 +16,17 @@
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.nav.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.isotope.min.js"></script>
-<script type="text/javascript" src="https://zoomarts.works/html/relway/js/counter.js"></script>
+{{-- <script type="text/javascript" src="https://zoomarts.works/html/relway/js/counter.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/imagesloaded.min.js"></script>
-<script type="text/javascript" src="https://zoomarts.works/html/relway/js/smooth-scroll.js"></script>
+<script type="text/javascript" src="https://zoomarts.works/html/relway/js/smooth-scroll.js"></script> --}}
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/contact-form.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/portfolio.js"></script>
 <script type="text/javascript" src="js/main_upg.js"></script>
+
+{{-- toogle langs --}}
+<script>
+  
+</script>
 
 {{-- About timeline --}}
 <script src="js/timeline.js"></script>
@@ -179,9 +184,52 @@
 
 {{-- Project --}}
 <script>
+
   $( ".get-all-project" ).click(function(e) {
       e.preventDefault(); 
       var currentlink = window.location.pathname; 
       window.open(currentlink + "project", '_self');
   });
+
+  var project_header  = $( "#portfolio-filters" ).find( ".project-filter-header" );
+  var project_lists   = $( "#project-show-list" ).find( ".project-grid-item" );
+
+  $(".project-filter-header").click(function(){
+
+    var project_filter_value = $(this).attr( "data-filter" );
+
+    $(project_lists).each(function(){
+      $(this).css("display", "none");
+    });
+
+    $(project_lists).each(function(){
+      if( project_filter_value == "*" ){
+        $(".project-grid-item").css("display", "block");
+      } else if ( $(this).attr("data-result") == project_filter_value ){
+        $(this).css("display", "block");
+      } 
+    });
+
+  });
+
+  
+
+ 
+
+</script>
+
+{{-- Active menu --}}
+<script>
+  const link = document.querySelectorAll(".menu-item");
+  const sect = document.querySelectorAll(".section");
+
+  function activeMenu(){
+    let len = sect.length;
+    while(--len && window.scrollY + 97 < sect[len].offsetTop){ }
+    link.forEach(ltx => ltx.classList.remove("active"));
+    link[len].classList.add("active");
+  }
+  activeMenu();
+  window.addEventListener("scroll", activeMenu);
+
 </script>
