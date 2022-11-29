@@ -1,18 +1,18 @@
 <!-- Start Portfolio -->
 <div id="our-projects"></div>
-<h2 id="projects" class="section-title" style="">Our projects</h2>
+<h2 id="projects" class="section-title" style="">@lang('messages.project_title')</h2>
 <div id="portfolio" class="section portfolio-section fullwidth-portfolio light-section" style="">
     
 
     
     <!-- Portfolio filters -->
     <div id="portfolio-filters" class="portfolio-filters">
-    	<a class="project-filter-header" data-filter="*">Feature</a>
+    	<a class="project-filter-header" data-filter="*">@lang('messages.project_featured')</a>
         <a class="project-filter-header" data-filter="identity">Food</a>
         <a class="project-filter-header" data-filter="web-design">Pharmacy</a>
         <a class="project-filter-header" data-filter="logo">Logistics</a>
         <a class="project-filter-header" data-filter="motion">Furniture</a>
-        <a class="get-all-project" target="_blank"> All project >> </a>
+        <a class="get-all-project" target="_blank"> @lang('messages.project_see_all') >> </a>
     </div>
     
     
@@ -23,70 +23,35 @@
     </section>
 
     <div id="project-show-list" class="project-grid">
+
+        @foreach ($project_list as $item)
         <div class="project-grid-item" data-result="identity">
             <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
+            <img src="{{ asset('public/upload/product/'.$item->pro_thumb) }}" alt="">
             <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
+                <h2>
+                    @switch( Config::get('app.locale') )
+                        @case('vi')
+                            {{ $item->pro_ten_vi }}
+                            @break
+                        @case('en')
+                            {{ $item->pro_ten_en }}
+                            @break
+                        @case('zh')
+                            {{ $item->pro_ten_zh }}
+                            @break
+                        @case('ja')
+                            {{ $item->pro_ten_ja }}
+                            @break
+                        @case('kr')
+                            {{ $item->pro_ten_kr }}
+                            @break
+                    @endswitch 
+                </h2>
+                
             </div>
         </div>
-        <div class="project-grid-item" data-result="web-design">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
-        <div class="project-grid-item" data-result="identity">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
-        <div class="project-grid-item" data-result="logo">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
-        <div class="project-grid-item" data-result="motion">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
-         <div class="project-grid-item" data-result="identity">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
-        <div class="project-grid-item" data-result="logo">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
-        <div class="project-grid-item" data-result="motion">
-            <div class="project-grid-cover"></div>
-            <img src="public/upload/3.jpg" alt="">
-            <div class="project-grid-info">
-                <h2>Project name</h2>
-                <p>Project description</p>
-            </div>
-        </div>
+        @endforeach
     </div>
     
     <!-- Portfolio Grid -->

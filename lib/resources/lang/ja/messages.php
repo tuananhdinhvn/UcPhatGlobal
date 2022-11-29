@@ -40,9 +40,11 @@ return [
 
     "whyus_head_company_timeline"   => "会社のタイムライン",
     "whyus_head_process"            => "一般的なプロセス",
+    "whyus_head_achievement"        => "Achievement",
     "whyus_head_technology"         => "技術と設備",
     "whyus_head_profile"            => "会社概要",
     "whyus_head_cust"               => "お客様",
+    "whyus_head_certificate"        => "Certificate",
     "whyus_process_step"            => "ステップ",
 
     "whyus_profile_doc_title"           => "題名",

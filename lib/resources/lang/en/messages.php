@@ -40,9 +40,11 @@ return [
 
     "whyus_head_company_timeline"   => "Company Timeline",
     "whyus_head_process"            => "General Process",
+    "whyus_head_achievement"        => "Achievement",
     "whyus_head_technology"         => "Technology",
     "whyus_head_profile"            => "Company profile",
     "whyus_head_cust"               => "Our Customers & Partners",
+    "whyus_head_certificate"        => "Certificate",
     "whyus_process_step"            => "Step",
 
     "whyus_profile_doc_title"           => "Title",

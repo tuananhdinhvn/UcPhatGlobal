@@ -125,7 +125,7 @@
 </head>
 <body>
 
-    @include('frontend.block.page_loader')
+    {{-- @include('frontend.block.page_loader') --}}
     
     @include('frontend.block.welcome_home')
     
@@ -162,6 +162,64 @@
 
     @include('frontend.block.script')
 
+    <!-- Sweet alert -->
+    <script src="{{ asset('public/admin/js/sweetalert2.all.min.js') }}"></script>
+            
+    <!--owl-->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+    <!-- Show pop up when email register sucess -->
+    <script>
+        @if (Session::has('save_data_complete'))
+        
+            @if (Config::get('app.locale') == 'en')
+                $(document).ready(function(){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "Your info 're recived<br/>We 'll contact you very soon",
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                });
+
+            @elseif(Config::get('app.locale') == 'zh')
+                $(document).ready(function(){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "收 到 您 的 信 息<br/>我 們 會 盡 快 與 您 聯 繫",
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                });
+
+            @elseif(Config::get('app.locale') == 'ja')
+                $(document).ready(function(){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "あ な た の 情 報 が 受 信 さ れ ま す<br/>す ぐ に ご 連 絡 い た し ま す",
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                });
+
+            @elseif(Config::get('app.locale') == 'kr')
+                $(document).ready(function(){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: "귀하의 정보가 접수되었습니다<br/>곧 연락 드리겠습니다",
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                });
+            @endif
+
+        @endif
+    </script>
 
 
 

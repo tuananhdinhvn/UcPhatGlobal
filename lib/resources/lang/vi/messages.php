@@ -40,9 +40,11 @@ return [
 
     "whyus_head_company_timeline"   => "Lịch sử",
     "whyus_head_process"            => "Quy trình chung",
+    "whyus_head_achievement"        => "Achievement",
     "whyus_head_technology"         => "Công nghệ",
     "whyus_head_profile"            => "Hồ sơ công ty",
     "whyus_head_cust"               => "Khách hàng & Đối tác",
+    "whyus_head_certificate"        => "Certificate",
     "whyus_process_step"            => "Bước",
 
     "whyus_profile_doc_title"           => "Tên tài liệu",

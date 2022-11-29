@@ -1082,6 +1082,7 @@
 .project-grid .project-grid-item .project-grid-info h2{
     text-transform: uppercase;
     font-weight: 800;
+    padding: 0 20px;
 }
 .project-grid .project-grid-item .project-grid-info p{
     color: #000;

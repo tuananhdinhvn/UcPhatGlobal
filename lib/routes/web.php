@@ -115,6 +115,21 @@ Route::group(['namespace' => 'admin'], function () {
         });
 
 
+        //Timeline
+        Route::group(['prefix' => 'timeline'], function () {
+            Route::get('/', 'EventController@showTimeline')->middleware('CheckLogout')->name('admin.timeline');
+            Route::get('add', 'EventController@addTimeline')->middleware('CheckLogout');
+            Route::post('add', 'EventController@postaddTimeline');
+
+            Route::get('edit/{id}', 'EventController@editTimeline')->middleware('CheckLogout');
+            Route::post('edit/{id}', 'EventController@posteditTimeline');
+
+            Route::get('show/{id}', 'EventController@checkshowTimeline')->middleware('CheckLogout');
+
+            Route::get('delete/{id}', 'EventController@deleteTimeline')->middleware('CheckLogout');
+        });
+
+
         //Blog Category
         Route::group(['prefix' => 'blogcat'], function () {
             Route::get('/', 'BlogCategoryController@getBlogCat')->middleware('CheckLogout');

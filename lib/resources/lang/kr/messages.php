@@ -40,9 +40,11 @@ return [
 
     "whyus_head_company_timeline"   => "회사 일정",
     "whyus_head_process"            => "일반 절차",
+    "whyus_head_achievement"        => "Achievement",
     "whyus_head_technology"         => "기술",
     "whyus_head_profile"            => "회사 프로필",
     "whyus_head_cust"               => "우리 고객 및 파트너",
+    "whyus_head_certificate"        => "Certificate",
     "whyus_process_step"            => "스탭",
 
     "whyus_profile_doc_title"           => "제목",

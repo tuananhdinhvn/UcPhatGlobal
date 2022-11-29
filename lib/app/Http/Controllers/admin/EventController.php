@@ -13,109 +13,117 @@ use App\model\EventModel;
 
 class EventController extends Controller
 {
-    public function showEvent(){
-        $data['event_list']     = EventModel::all();
+    public function showTimeline(){
+        $data['timeline_list']         = EventModel::orderBy('event_date', 'ASC')->get();
 
-        return view('admin.event', $data);
+        return view('admin.display.timeline', $data);
     }
 
-    public function addEvent(){
-        $data["months"]         = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-        return view('admin.addevent', $data);
+    public function addTimeline(){
+        return view('admin.add.add_timeline');
     }
 
-    public function postaddEvent(Request $request){
-        $event                  = new EventModel;
 
-        if ($request->hasFile('event_thumb')) {
-            $file                   = $request->file('event_thumb');
-            $image_name             = $file->getClientOriginalName();
-            $image_save_name        = time().$image_name;
-            $event->event_thumb     = $image_save_name;
-            $file->move('public/upload/event/', $image_save_name);
+    public function postaddTimeline(Request $request){
+
+        $timeline_item       = new EventModel;
+
+        $timeline_item->event_date          = $request->event_date;
+
+        if ($request->hasFile('event_img')) {
+            $file_timeline_img              = $request->file('event_img');
+            $timeline_img_image_name        = $file_timeline_img->getClientOriginalName();
+            $timeline_img_image_save_name   = time().$timeline_img_image_name;
+            $timeline_item->event_img    = $timeline_img_image_save_name;
+            $file_timeline_img->move('public/upload/timeline/', $timeline_img_image_save_name);
         }
 
-        $event->event_ten       = $request->event_ten;
-        $event->event_ten_en    = $request->event_ten_en;
+        $timeline_item->event_title_vi   = $request->event_title_vi;
+        $timeline_item->event_title_en   = $request->event_title_en;
+        $timeline_item->event_title_zh   = $request->event_title_zh;
+        $timeline_item->event_title_ja   = $request->event_title_ja;
+        $timeline_item->event_title_kr   = $request->event_title_kr;
 
-        $event->event_des       = $request->event_des;
-        $event->event_des_en    = $request->event_des_en;
+        $timeline_item->event_description_vi    = $request->event_description_vi;
+        $timeline_item->event_description_en    = $request->event_description_en;
+        $timeline_item->event_description_zh    = $request->event_description_zh;
+        $timeline_item->event_description_ja    = $request->event_description_ja;
+        $timeline_item->event_description_kr    = $request->event_description_kr;
 
-        $event->event_end_day   = $request->event_end_day;
-        $event->event_end_month = $request->event_end_month;
-        $event->event_end_year  = $request->event_end_year;
-        $event->event_end_time  = $request->event_end_time;
+        $timeline_item->event_show              = true;
 
-        $event->event_author    = $request->event_author;
-        $event->event_editor    = $request->event_author;
-        $event->event_show      = true; 
+        $timeline_item->created_at              = Carbon::now();
+        $timeline_item->updated_at              = Carbon::now();
+        $timeline_item->save();
 
-        $event->created_at       = Carbon::now();
-        $event->updated_at       = Carbon::now();
-        $event->save();
 
-        return redirect()->intended('admin/event');
+        return redirect()->intended('admin/timeline');
+    }
+
+    public function editTimeline($id){
+        $data['timeline_item']      = EventModel::find($id);
+
+        return view('admin.edit.edit_timeline', $data);
     }
 
 
 
-    public function editEvent($id){
-        $data["months"]         = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        $data['event_item']     = EventModel::find($id);
+    public function posteditTimeline(Request $request, $id){
+        $timeline_item      = EventModel::find($id);
+       
+        $timeline_item->event_date          = $request->event_date;
 
-        return view('admin.editevent', $data);
-    }
+        if ($request->hasFile('event_img')) {
+            File::delete('public/upload/timeline/'.$timeline_item->event_img);
 
-    public function posteditEvent(Request $request, $id){
-        $event                  = EventModel::find($id);
-
-        if ($request->hasFile('event_thumb')) {
-            File::delete('public/upload/event/'.$event->event_thumb);
-
-            $file                   = $request->file('event_thumb');
-            $image_name             = $file->getClientOriginalName();
-            $image_save_name        = time().$image_name;
-            $event->event_thumb     = $image_save_name;
-            $file->move('public/upload/event/', $image_save_name);
+            $file                       = $request->file('event_img');
+            $image_name                 = $file->getClientOriginalName();
+            $image_save_name            = time().$image_name;
+            $timeline_item->event_img   = $image_save_name;
+            $file->move('public/upload/timeline/', $image_save_name);
         }
 
-        $event->event_ten       = $request->event_ten;
-        $event->event_ten_en    = $request->event_ten_en;
 
-        $event->event_des       = $request->event_des;
-        $event->event_des_en    = $request->event_des_en;
+        $timeline_item->event_title_vi   = $request->event_title_vi;
+        $timeline_item->event_title_en   = $request->event_title_en;
+        $timeline_item->event_title_zh   = $request->event_title_zh;
+        $timeline_item->event_title_ja   = $request->event_title_ja;
+        $timeline_item->event_title_kr   = $request->event_title_kr;
 
-        $event->event_end_day   = $request->event_end_day;
-        $event->event_end_month = $request->event_end_month;
-        $event->event_end_year  = $request->event_end_year;
-        $event->event_end_time  = $request->event_end_time;
+        $timeline_item->event_description_vi    = $request->event_description_vi;
+        $timeline_item->event_description_en    = $request->event_description_en;
+        $timeline_item->event_description_zh    = $request->event_description_zh;
+        $timeline_item->event_description_ja    = $request->event_description_ja;
+        $timeline_item->event_description_kr    = $request->event_description_kr;
 
-        $event->event_editor    = $request->event_editor;
+        $timeline_item->updated_at              = Carbon::now();
+        $timeline_item->save();
 
-        $event->created_at       = Carbon::now();
-        $event->updated_at       = Carbon::now();
-        $event->save();
-
-        return redirect()->intended('admin/event');
+        return redirect()->intended('admin/timeline');
     }
 
 
-    public function deleteEvent(Request $request, $id){
-        $event                   = EventModel::find($id);
-        File::delete('public/upload/event/'.$event->event_thumb);
+    public function checkshowTimeline($id){
+        $timeline_item              = EventModel::find($id);
+        
+        $timeline_item->event_show  = $timeline_item->event_show ? false : true;
+        $timeline_item->save();
+
+        return back();
+
+    }
+
+
+
+    public function deleteTimeline(Request $request, $id){
+        $timeline_item      = EventModel::find($id);
+
+        File::delete('public/upload/timeline/'.$timeline_item->event_img);
         EventModel::destroy($id);
 
-        return back();
-    }
-
-
-    public function checkEvent($id){
-        $event                  = EventModel::find($id);
-        $event->event_show      = $event->event_show ? 0 : 1;
-        $event->save();
-        
-        return back();
+        return redirect()->intended('admin/timeline');
+       
     }
 
 }

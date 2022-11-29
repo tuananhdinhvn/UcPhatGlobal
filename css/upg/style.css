@@ -252,7 +252,7 @@ input, textarea {
     -o-transition: all 0.3s ease-in-out;
 }
 
-input[type="text"], input[type="text"]:hover, input[type="text"]:focus, textarea, textarea:hover, textarea:focus {
+input[type="email"], input[type="email"]:hover, input[type="text"], input[type="text"]:hover, input[type="text"]:focus, textarea, textarea:hover, textarea:focus {
 	color: #888;
 	min-width: 100%;
 	padding: 6px 9px;

@@ -40,9 +40,11 @@ return [
 
     "whyus_head_company_timeline"   => "公司時間表",
     "whyus_head_process"            => "一般流程",
+    "whyus_head_achievement"        => "Achievement",
     "whyus_head_technology"         => "技術裝備",
     "whyus_head_profile"            => "公司簡介",
     "whyus_head_cust"               => "我們的顧客",
+    "whyus_head_certificate"        => "Certificate",
     "whyus_process_step"            => "步",
 
     "whyus_profile_doc_title"           => "標題",
