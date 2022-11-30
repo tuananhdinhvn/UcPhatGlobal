@@ -73,7 +73,11 @@
 
                         <thead>
                             <tr class="">
-                                <th class="col-md-10 "><i class="fa fa-tag "></i> Tên ngành nghề </th>
+                                <th class="col-md-4 "><i class="fa fa-tag "></i> Tên ngành nghề </th>
+
+                                {{-- <th class="col-md-2 " style="text-align:center"><i class="fa fa-tag "></i> Số dự án </th> --}}
+
+                                <th class="col-md-3 " style="text-align:center"><i class="fa fa-tag "></i> Hiển thị trang chủ </th>
                                 
                                 <th style="text-align: center"><i class=" fa fa-edit"></i> Tùy chỉnh</th>
                             </tr>
@@ -84,6 +88,24 @@
                                 <tr>
                                     <td>
                                         <a href="{{ asset('admin/project/major/edit/'.$item->major_id) }}">{{ $item->major_name_en }}</a>
+                                    </td>
+
+                                    
+                                    {{-- <td style="text-align:center">
+                                        22
+                                    </td> --}}
+                                    
+                                    
+
+                                    <td style="text-align:center">
+                                        <a href="{{ asset('admin/project/major/show/'.$item->major_id) }}" > 
+                                            @if ($item->major_show==1)
+                                                <button class="btn btn-success btn-xs" title="Đang hiển thị"><i class="fa fa-check"></i></button>
+                                            @else
+                                                <button class="btn btn-danger btn-xs" title="Đang ẩn"><i class="fa fa-minus"></i></button>
+                                            @endif
+                                            
+                                        </a>
                                     </td>
                                     
                                     <td style="text-align:center">

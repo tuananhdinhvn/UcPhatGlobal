@@ -15,6 +15,7 @@ Route::group(['namespace' => 'FrontEnd', 'middleware' => 'locale'], function () 
 
     Route::group(['prefix' => 'project'], function () {
         Route::get('/', 'IndexController@getProject')->name('project');
+        Route::get('{id}', 'IndexController@getProjectDetail');
     });
 
 
@@ -161,10 +162,10 @@ Route::group(['namespace' => 'admin'], function () {
 
         // Project admin
         Route::group(['prefix' => 'project'], function () {
-            Route::get('/', 'ProductController@getProject')->name('admin.project')->middleware('CheckLogout');
+            Route::get('/', 'ProjectController@getProject')->name('admin.project')->middleware('CheckLogout');
             
-            Route::get('add', 'ProductController@addProject')->middleware('CheckLogout')->name('admin.project.add');
-            Route::post('add', 'ProductController@postaddProject');
+            Route::get('add', 'ProjectController@addProject')->middleware('CheckLogout')->name('admin.project.add');
+            Route::post('add', 'ProjectController@postaddProject');
 
             Route::get('detail/{id}', 'ProductController@getProjectDetail')->middleware('CheckLogout');
             Route::post('detail/{id}', 'ProductController@postProjectDetail');
@@ -179,28 +180,32 @@ Route::group(['namespace' => 'admin'], function () {
 
             // Project location
             Route::group(['prefix' => 'location'], function () {
-                Route::get('/', 'ProductCategoryController@getProjectLocation')->name('admin.project.location')->middleware('CheckLogout');
+                Route::get('/', 'ProjectController@getProjectLocation')->name('admin.project.location')->middleware('CheckLogout');
                 
-                Route::get('add', 'ProductCategoryController@addProjectLocation')->name('admin.project.location.add')->middleware('CheckLogout');
-                Route::post('add', 'ProductCategoryController@postaddProjectLocation');
+                Route::get('add', 'ProjectController@addProjectLocation')->name('admin.project.location.add')->middleware('CheckLogout');
+                Route::post('add', 'ProjectController@postaddProjectLocation');
 
-                Route::get('edit/{id}', 'ProductCategoryController@editProjectLocation')->middleware('CheckLogout');
-                Route::post('edit/{id}', 'ProductCategoryController@posteditProjectLocation');
+                Route::get('edit/{id}', 'ProjectController@editProjectLocation')->middleware('CheckLogout');
+                Route::post('edit/{id}', 'ProjectController@posteditProjectLocation');
 
-                Route::get('delete/{id}', 'ProductCategoryController@deleteLocation')->middleware('CheckLogout');
+                Route::get('delete/{id}', 'ProjectController@deleteLocation')->middleware('CheckLogout');
             });
 
             // Project major
             Route::group(['prefix' => 'major'], function () {
-                Route::get('/', 'ProductCategoryController@getProjectMajor')->name('admin.project.major')->middleware('CheckLogout');
+                Route::get('/', 'ProjectController@getProjectMajor')->name('admin.project.major')->middleware('CheckLogout');
 
-                Route::get('add', 'ProductCategoryController@addProjectMajor')->name('admin.project.major.add')->middleware('CheckLogout');
-                Route::post('add', 'ProductCategoryController@postaddProjectMajor');
+                Route::get('show/{id}', 'ProjectController@checkshowProjectMajor')->middleware('CheckLogout');
 
-                Route::get('edit/{id}', 'ProductCategoryController@editProjectMajor')->middleware('CheckLogout');
-                Route::post('edit/{id}', 'ProductCategoryController@posteditProjectMajor');
+                Route::get('add', 'ProjectController@addProjectMajor')->name('admin.project.major.add')->middleware('CheckLogout');
+                Route::post('add', 'ProjectController@postaddProjectMajor');
 
-                Route::get('delete/{id}', 'ProductCategoryController@deleteMajor')->middleware('CheckLogout');
+                Route::get('edit/{id}', 'ProjectController@editProjectMajor')->middleware('CheckLogout');
+                Route::post('edit/{id}', 'ProjectController@posteditProjectMajor');
+
+                Route::get('delete/{id}', 'ProjectController@deleteMajor')->middleware('CheckLogout');
+
+                
             });
         });
 

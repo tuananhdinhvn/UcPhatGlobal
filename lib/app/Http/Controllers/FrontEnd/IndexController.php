@@ -10,7 +10,7 @@ use App\model\ImageModel;
 use App\model\CustomerModel;
 use App\model\BlogModel;
 use App\model\ProductModel;
-use App\model\ProdutPhotoModel;
+use App\model\ProductPhotoModel;
 use App\model\EventModel;
 use App\model\QNAModel;
 use App\model\LayoutHomepageModel;
@@ -58,7 +58,7 @@ class IndexController extends Controller
         // Project
         $data['project_index']      = LayoutHomepageModel::find(1);
         $data['project_list']       = ProductModel::where('pro_type', 'project')->where('pro_hienthi', 1)->orderBy('pro_time_work', 'desc')->get();
-        $data['major_list']         = MajorModel::all();
+        $data['major_list']         = MajorModel::where('major_show', 1)->get();
         $data['nation_list']        = NationModel::all();
 
 
@@ -70,7 +70,16 @@ class IndexController extends Controller
         return view('frontend.project');
     }
 
-    
+    public function getProjectDetail($id){
+        $data['project_item']               = ProductModel::find($id);
+        $data['project_alt_photo']          = ProductPhotoModel::where('product_id', $id)->where('photo_type', null)->get();
+        $data['product_alt_photo_private']  = ProductPhotoModel::where('product_id', $id)->where('photo_type', 'private')->get();
+        $data['nation_list']                = NationModel::all();
+        $data['major_list']                 = MajorModel::all();
+        $data['location_list']              = ProductLocationModel::all();
+
+        return view('frontend.projectdetail', $data);
+    }
 
   
 

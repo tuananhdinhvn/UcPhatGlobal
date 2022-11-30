@@ -59,39 +59,8 @@ class ProductController extends Controller
 
     
 
-    //Filter product
-    public function getFilterProcatChild($idprocat){
-        $procat_child       = ProductCategoryChildModel::where('procat2_procat_id', $idprocat)->get();
-        $count_procat_child = ProductCategoryChildModel::where('procat2_procat_id', $idprocat)->count();
 
-        if($count_procat_child != 0){
-            foreach($procat_child as $key => $item){
-                if($key==0){
-                    echo "<option value='none'>Chọn danh mục con</option>";
-                }
-                echo "<option value='".$item->procat2_id."'>".$item->procat2_ten."</option>";
-            }
-        } else {
-            echo "<option value='none'>Không có danh mục con</option>";
-        }
-    }
-
-    //Upload extra product photo
-    public function postsubmit(Request $request){
-        $productID              = $request->productID;
-        $file                   = $request->file('file');
-        $image_name             = $file->getClientOriginalName();
-        $image_name             = time().$image_name;
-        $file->move('public/upload/productphoto', $image_name);
-
-        $photo                  = new ProdutPhotoModel;
-        $photo->photo_url       = $image_name;
-        $photo->product_id      = $productID;
-        $photo->save();
-
-        return response()->json(['uploaded'=>'upload/productphoto'.$image_name]);
-
-    }
+    
 
 
 

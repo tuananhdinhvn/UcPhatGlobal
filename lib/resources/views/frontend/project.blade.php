@@ -19,7 +19,7 @@
     <meta name="author" content="tuananhdinh.vn">
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="public/upload/info/favicon.png">
+    <link rel="shortcut icon" href="{{ asset('public/upload/template/'. $getindex->homepage_logo_plus) }}">
 
     <!-- Bootstrap CSS Styles -->
     <link rel="stylesheet" href="https://zoomarts.works/html/relway/css/bootstrap.min.css" type="text/css" media="screen" />
@@ -78,7 +78,7 @@
                     
                         <div class="logo-main">
                             <a href="{{ asset('/')}}">
-                                <img src="public/upload/info/logo-main.png" alt="">
+                                <img src="{{ asset('public/upload/template/'. $getindex->homepage_logo) }}" alt="">
                             </a>
                         </div>
                         <a href="{{ asset('/')}}">

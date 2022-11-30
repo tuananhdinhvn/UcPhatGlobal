@@ -10,17 +10,75 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\model\ProductCategoryModel;
-use App\Http\Requests\AddProductCatRequest;
-use App\Http\Requests\EditProductCatRequest;
-use App\Http\Requests\ProductCatChildRequest;
 
 use App\model\ProductLocationModel;
-use App\model\ProductCategoryChildModel;
 use App\model\CustomerModel;
+
+use App\model\ProductModel;
+use App\model\ProductPhotoModel;
 use App\model\MajorModel;
 
-class ProductCategoryController extends Controller
+class ProjectController extends Controller
 {
+
+    // ----------------------Project List-----------------------
+    public function getProject(Request $request){
+        $pro_type                   = $request->type;
+
+        $data['project_list']       = ProductModel::where('pro_type', 'project')->orderBy('pro_time_work', 'desc')->get();
+        $data['project_photo']      = ProductPhotoModel::all();
+
+        return view('admin/display/project', $data);
+    }
+
+
+    public function addProject(Request $request){
+        $data['pro_type']           = $request->type;
+        $data['nation_list']        = NationModel::orderBy('nation_name_en', 'asc')->get();
+        $data['major_list']         = MajorModel::all();
+        $data['location_list']      = ProductLocationModel::orderBy('locate_name_vi', 'asc')->get();
+        
+        return view('admin/add/addproject', $data);
+    }
+
+
+    public function postaddProject(Request $request){
+
+        $project_item       = new ProductModel;
+
+
+        if ($request->hasFile('pro_thumb')) {
+            $file_pro_thumb             = $request->file('pro_thumb');
+            $pro_thumb_image_name       = $file_pro_thumb->getClientOriginalName();
+            $pro_thumb_image_save_name  = time().$pro_thumb_image_name;
+            $project_item->pro_thumb    = $pro_thumb_image_save_name;
+            $file_pro_thumb->move('public/upload/product/', $pro_thumb_image_save_name);
+        }
+
+
+        $product->pro_ten_vi             = isset($request->pro_ten_vi) ? $request->pro_ten_vi : null;
+        $product->pro_mota              = $request->pro_mota;
+        $product->pro_keyword           = $request->pro_keyword;
+
+        $product->updated_at            = Carbon::now();
+        $product->save();
+
+
+       
+
+        
+
+        return redirect()->intended('admin/project');
+    }
+
+
+    // ----------------------End Project List-------------------
+
+
+
+
+
+
 
     // ----------------------Project location-----------------------
     public function getProjectLocation(){
@@ -82,15 +140,16 @@ class ProductCategoryController extends Controller
 
 
 
+
     // ----------------------Project Major-----------------------
     public function getProjectMajor(){
         $data['major_list']     = MajorModel::all();
-
+        
         return view('admin/display/major', $data);
     }
 
+   
     public function addProjectMajor(){
-        
         return view('admin/add/addMajor');
     }
 
@@ -131,11 +190,20 @@ class ProductCategoryController extends Controller
         return redirect()->intended('admin/project/major');
     }
 
+    public function checkshowProjectMajor($id){
+        $major_item                 = MajorModel::find($id);
+        
+        $major_item->major_show     = $major_item->major_show ? false : true;
+        $major_item->save();
+
+        return back();
+
+    }
+
     public function deleteMajor($id){
         MajorModel::destroy($id);
         return back();
     }
-
 
     // ----------------------End Project Major--------------------
 

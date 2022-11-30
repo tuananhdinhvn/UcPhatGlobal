@@ -25,7 +25,7 @@
             </li> --}}
 
 
-            {{-- <li class="sub-menu">
+            <li class="sub-menu">
                 <a href="javascript:;" @if ($active_sidebar_admin[1]=='project') class="active" @endif>
                     <i class="fa fa-tags"></i>
                     <span>Project</span>
@@ -35,7 +35,7 @@
                     <li><a href="{{ route('admin.project.major') }}">Ngành nghề</a></li>
                     <li><a href="{{ route('admin.project') }}">Danh sách dự án</a></li>
                 </ul>
-            </li> --}}
+            </li>
 
 
             

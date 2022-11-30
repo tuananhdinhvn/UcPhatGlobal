@@ -8,10 +8,28 @@
     <!-- Portfolio filters -->
     <div id="portfolio-filters" class="portfolio-filters">
     	<a class="project-filter-header" data-filter="*">@lang('messages.project_featured')</a>
-        <a class="project-filter-header" data-filter="identity">Food</a>
-        <a class="project-filter-header" data-filter="web-design">Pharmacy</a>
-        <a class="project-filter-header" data-filter="logo">Logistics</a>
-        <a class="project-filter-header" data-filter="motion">Furniture</a>
+        @foreach ($major_list as $major_item)
+            <a class="project-filter-header" data-filter="{{ $major_item->major_id }}">
+                @switch( Config::get('app.locale') )
+                    @case('vi')
+                        {{ $major_item->major_name_vi }}
+                        @break
+                    @case('en')
+                        {{ $major_item->major_name_en }}
+                        @break
+                    @case('zh')
+                        {{ $major_item->major_name_zh }}
+                        @break
+                    @case('ja')
+                        {{ $major_item->major_name_ja }}
+                        @break
+                    @case('kr')
+                        {{ $major_item->major_name_kr }}
+                        @break
+                @endswitch 
+            </a>
+        @endforeach
+        
         <a class="get-all-project" target="_blank"> @lang('messages.project_see_all') >> </a>
     </div>
     
@@ -25,32 +43,34 @@
     <div id="project-show-list" class="project-grid">
 
         @foreach ($project_list as $item)
-        <div class="project-grid-item" data-result="identity">
-            <div class="project-grid-cover"></div>
-            <img src="{{ asset('public/upload/product/'.$item->pro_thumb) }}" alt="">
-            <div class="project-grid-info">
-                <h2>
-                    @switch( Config::get('app.locale') )
-                        @case('vi')
-                            {{ $item->pro_ten_vi }}
-                            @break
-                        @case('en')
-                            {{ $item->pro_ten_en }}
-                            @break
-                        @case('zh')
-                            {{ $item->pro_ten_zh }}
-                            @break
-                        @case('ja')
-                            {{ $item->pro_ten_ja }}
-                            @break
-                        @case('kr')
-                            {{ $item->pro_ten_kr }}
-                            @break
-                    @endswitch 
-                </h2>
-                
+        <a href="{{ asset('project/'.$item->pro_id) }}">
+            <div class="project-grid-item" data-result="{{ $item->pro_major_id }}">
+                <div class="project-grid-cover"></div>
+                <img src="{{ asset('public/upload/product/'.$item->pro_thumb) }}" alt="">
+                <div class="project-grid-info">
+                    <h2>
+                        @switch( Config::get('app.locale') )
+                            @case('vi')
+                                {{ $item->pro_ten_vi }}
+                                @break
+                            @case('en')
+                                {{ $item->pro_ten_en }}
+                                @break
+                            @case('zh')
+                                {{ $item->pro_ten_zh }}
+                                @break
+                            @case('ja')
+                                {{ $item->pro_ten_ja }}
+                                @break
+                            @case('kr')
+                                {{ $item->pro_ten_kr }}
+                                @break
+                        @endswitch 
+                    </h2>
+                    
+                </div>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
     
