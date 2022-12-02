@@ -37,7 +37,7 @@ class IndexController extends Controller
     public function getIndex(){
 
         //Yimeline
-        $data['timeline_index']         = EventModel::where('event_show', true)->orderBy('event_date', 'ASC')->get();
+        $data['timeline_index']         = EventModel::where('event_show', true)->orderBy('event_date', 'desc')->get();
 
         // Why us
         $data['numbers_icon']           = ImageModel::where('img_type', 'why-us')->get();
@@ -67,7 +67,10 @@ class IndexController extends Controller
 
     // ------------------- Start project -----------
     public function getProject(){
-        return view('frontend.project');
+        $data['project_list']       = ProductModel::where('pro_type', 'project')->orderBy('pro_time_work', 'desc')->get();
+        $data['major_list']         = MajorModel::orderBy('major_id', 'desc')->get();
+
+        return view('frontend.project', $data);
     }
 
     public function getProjectDetail($id){

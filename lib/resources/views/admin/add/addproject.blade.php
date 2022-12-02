@@ -218,27 +218,6 @@
                                 </div>
 
 
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">3D video: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="pro_3d_video" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">4D video: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="pro_4d_video" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Progress video: </label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="pro_progress_video" class="form-control">
-                                    </div>
-                                </div>
-        
                                 
                                 
 
@@ -543,159 +522,12 @@
                                     </div>
                                 </div><br/><br/>
 
-        
-                                {{-- <!--Hình background cover-->
-                                <div class="form-group last">
-                                    <label class="control-label col-md-2">Hình background:</label>
-                                    <div class="col-md-10">
-                                        <div class="fileupload fileupload-new col-md-offset-1" data-provides="fileupload">
-                                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img id="whyus_img_output" src="{{ asset('public/noimage.jpg') }}" alt="" />
-                                            </div>
-                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                            <div>
-                                                <span class="btn btn-theme02 btn-file">
-                                                    <span class="fileupload-new"><i class="fa fa-paperclip"></i> Chọn hình ảnh</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                                                    <input id="whyus_img_input" type="file" name="pro_background_cover"class="default" />
-                                                </span>
-                                                <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
-                                            </div>
-                                        </div>
-                                        <span class="label label-warning" style="font-weight: 200">NOTE !</span>
-                                        <span>
-                                            Kích thước hình ảnh tối ưu 1200px X 729px
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!--Hình thi công-->
-                                <div class="form-group last">
-                                    <label class="control-label col-md-2">Hình ảnh thi công:</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" type="file" multiple name="file[]">
-                                    </div>
-                                </div>
-                                <span class="label label-warning" style="font-weight: 200">NOTE !</span>
-                                <span>
-                                Kích thước hình ảnh tối ưu 1024px X 683px
-                                </span> --}}
                                 
 
                             </div>
                         </div>
                     </div>
 
-                    {{-- <!--Hình private-->
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseThree">
-                                <em class="glyphicon glyphicon-chevron-right icon-fixed-width"></em>Hình ảnh private
-                            </a>
-                        </div>
-
-                        <!--Hình thi công-->
-                        <div id="collapseThree" class="accordion-body collapse ">
-                            <div class="accordion-inner">
-                                <div class="form-group last">
-                                    <label class="control-label col-md-2">Hình ảnh thi công<br/>(Private):</label>
-                                    <div class="col-md-10">
-                                        <input class="form-control" type="file" multiple name="file_private[]">
-                                    </div>
-                                </div>  
-                                <span class="label label-warning" style="font-weight: 200">NOTE !</span>
-                                <span>
-                                Kích thước hình ảnh tối ưu 1024px X 683px
-                                </span>
-                                <p></p>
-
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Thông tin dự án public-->
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseFour">
-                                <em class="glyphicon glyphicon-chevron-right icon-fixed-width"></em>Thông tin dự án (public)
-                            </a>
-                        </div>
-
-                        <div id="collapseFour" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Việt): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_vi" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Anh): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_en" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Trung): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_zh" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Nhật): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_ja" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Thông tin dự án private-->
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseFive">
-                                <em class="glyphicon glyphicon-chevron-right icon-fixed-width"></em>Thông tin dự án (private)
-                            </a>
-                        </div>
-
-                        <div id="collapseFive" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Việt): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_private_vi" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Anh): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_private_en" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Trung): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_private_zh" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">Thông tin dự án<br>(Tiếng Nhật): </label>
-                                    <div class="col-sm-10">
-                                        <textarea class="editmce" name="pro_thongtin_private_ja" id="" style="width:100%;" rows="20"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 
                     
 

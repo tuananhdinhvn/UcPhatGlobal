@@ -95,43 +95,6 @@
                             </div>
                         </div>
 
-                        <hr/>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Địa chỉ văn phòng<br/>(Tiếng Việt):</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_diachi_office_vi" class="form-control" value="{{ $setting_item->st_diachi_office_vi }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Địa chỉ văn phòng<br/>(Tiếng Anh):</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_diachi_office_en" class="form-control" value="{{ $setting_item->st_diachi_office_en }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Địa chỉ văn phòng<br/>(Tiếng Trung):</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_diachi_office_zh" class="form-control" value="{{ $setting_item->st_diachi_office_zh }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Địa chỉ văn phòng<br/>(Tiếng Nhật):</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_diachi_office_ja" class="form-control" value="{{ $setting_item->st_diachi_office_ja }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Địa chỉ văn phòng<br/>(Tiếng Hàn):</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_diachi_office_kr" class="form-control" value="{{ $setting_item->st_diachi_office_kr }}">
-                            </div>
-                        </div>
-                        <hr/>
 
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Email:</label>
@@ -147,60 +110,9 @@
                             </div>
                         </div>
 
-                        
-                        <h3>Social</h3>
-                        <br/>
-
-                       
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Pinterest:</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_pinterest" class="form-control" value="{{ $setting_item->st_pinterest }}">
-                            </div>
-                        </div>
-						
-						<div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Youtube:</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_youtube" class="form-control" value="{{ $setting_item->st_youtube }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Facebook:</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="st_fanpage" class="form-control" value="{{ $setting_item->st_fanpage }}">
-                            </div>
-                        </div>
-
+                    
                                               
 						
-
-
-                        <h3>Cài đặt code bổ sung</h3>
-                        <br/>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Đầu trang <code>&lt;head\&gt;</code>:</label>
-                            <div class="col-sm-10">
-                                <textarea name="st_codehead" id="" style="width:100%;" rows="10">{{ $setting_item->st_codehead }}</textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Đầu body <code>&lt;body&gt;</code>:</label>
-                            <div class="col-sm-10">
-                                <textarea name="st_codebody" id="" style="width:100%;" rows="10">{{ $setting_item->st_codebody }}</textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="col-sm-2 col-sm-2 control-label">Cuối body <code>&lt;/body&gt;</code>:</label>
-                            <div class="col-sm-10">
-                                <textarea name="st_codefoot" id="" style="width:100%;" rows="10">{{ $setting_item->st_codefoot }}</textarea>
-                            </div>
-                        </div>
 
 
                         <hr/>

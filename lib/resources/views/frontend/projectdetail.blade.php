@@ -24,32 +24,32 @@
         <script src="https://demos.creative-tim.com/rubik/assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="//hstatic.net/0/0/global/design/js/bootstrap.min.js"></script>
         <script src="//hstatic.net/0/0/global/option_selection.js" type="text/javascript"></script>
-        <script src="//hstatic.net/0/0/global/api.jquery.js" type="text/javascript"></script>
+        {{-- <script src="//hstatic.net/0/0/global/api.jquery.js" type="text/javascript"></script> --}}
 
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/scripts.js?v=69" type="text/javascript"></script>
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/modernizr.custom.js?v=69" type="text/javascript"></script>
-        <script src="//hstatic.net/0/0/global/design/theme-default/html5shiv.js"></script>
+        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/scripts.js?v=69" type="text/javascript"></script> --}}
+        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/modernizr.custom.js?v=69" type="text/javascript"></script> --}}
+        {{-- <script src="//hstatic.net/0/0/global/design/theme-default/html5shiv.js"></script> --}}
         <script src="//hstatic.net/0/0/global/design/theme-default/jquery-migrate-1.2.0.min.js"></script>
-        <script src="//hstatic.net/0/0/global/design/theme-default/jquery.touchSwipe.min.js" type="text/javascript"></script>
-        <script data-target=".product-resize" data-parent=".products-resize" data-img-box=".image-resize" src="//hstatic.net/0/0/global/design/js/fixheightproductv2.js"></script>
-        <script src="//hstatic.net/0/0/global/design/js/haravan.plugin.1.0.js"></script>
+        {{-- <script src="//hstatic.net/0/0/global/design/theme-default/jquery.touchSwipe.min.js" type="text/javascript"></script> --}}
+        {{-- <script data-target=".product-resize" data-parent=".products-resize" data-img-box=".image-resize" src="//hstatic.net/0/0/global/design/js/fixheightproductv2.js"></script> --}}
+        {{-- <script src="//hstatic.net/0/0/global/design/js/haravan.plugin.1.0.js"></script> --}}
 
-        <script src="//hstatic.net/0/0/global/design/theme-default/jquery.flexslider.js" type="text/javascript"></script>
+        {{-- <script src="//hstatic.net/0/0/global/design/theme-default/jquery.flexslider.js" type="text/javascript"></script> --}}
 
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/classie.js?v=69" type="text/javascript"></script>
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/mlpushmenu.js?v=69" type="text/javascript"></script>
+        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/classie.js?v=69" type="text/javascript"></script>
+        <script src="//theme.hstatic.net/1000077855/1000533237/14/mlpushmenu.js?v=69" type="text/javascript"></script> --}}
 
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/core.min.js?v=69" type="text/javascript"></script>
+        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/core.min.js?v=69" type="text/javascript"></script>
         <script src="//theme.hstatic.net/1000077855/1000533237/14/widget.min.js?v=69" type="text/javascript"></script>
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/mouse.min.js?v=69" type="text/javascript"></script>
+        <script src="//theme.hstatic.net/1000077855/1000533237/14/mouse.min.js?v=69" type="text/javascript"></script> --}}
 
         <script src="//theme.hstatic.net/1000077855/1000533237/14/slider.min.js?v=69" type="text/javascript"></script>
        
-        <link href="//hstatic.net/0/0/global/design/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
+        {{-- <link href="//hstatic.net/0/0/global/design/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
         <script src="//hstatic.net/0/0/global/design/plugins/fancybox/jquery.fancybox.js" type="text/javascript"></script>
-        <script src="//hstatic.net/290/1000076290/10/2016/3-17/jquery.fancybox-media.js" type="text/javascript"></script>
+        <script src="//hstatic.net/290/1000076290/10/2016/3-17/jquery.fancybox-media.js" type="text/javascript"></script> --}}
 
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54aa0592190a1461" async="async"></script>
+        {{-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54aa0592190a1461" async="async"></script> --}}
         <!--------------CSS----------->
         <link href="//hstatic.net/0/0/global/design/theme-default/page-contact-form.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -87,6 +87,7 @@
                 font-size: 14px;
                 padding-left: 0;
                 padding-right: 0;
+                font-family: 'Alexandria', sans-serif;
             }
 
             .block-social-footer {
@@ -102,6 +103,12 @@
                 padding: 10px 10px 10px 0;
                 font-size: 16px;
                 text-transform: uppercase;
+                font-family: 'Alexandria', sans-serif;
+                color: #fff;
+            }
+            .bread-title a{
+                font-family: 'Alexandria', sans-serif;
+                color: #fff;
             }
             .bread-title a:hover {
                 color: #c94645 !important;
@@ -406,6 +413,10 @@
         <link rel="stylesheet" type="text/css" href="css/upg/project-detail.css" media="screen" />
 
         <style>
+            .breadcumb-cover{
+                background: #428bff;
+                padding: 20px 0 0 0;
+            }
             #header-project{
                 height: 20vh;
                 width: 100%;
@@ -414,22 +425,33 @@
             }
             .top-menu{
                 height: 7vh;
+                font-family: 'Alexandria', sans-serif;
             }
             .top-left-menu{
                 width: 50%;
                 float: left;
                 text-align: center;
                 height: 100%;
-                -webkit-mask-image: -webkit-linear-gradient(top, rgba(143,107,42,1), rgba(213,160,30,.5) 50%, rgba(254,224,141,1));
-                -webkit-mask-image: linear-gradient(top, rgba(143,107,42,1), rgba(213,160,30,.5) 50%, rgba(254,224,141,1));
                 text-shadow: 0 0 0.5px #000;
-                font-size: 2rem;
+                font-size: 1.5rem;
                 line-height: 30px;
                 position: relative;
                 top: 10px;
                 font-weight: bold;
                 text-transform: uppercase;
                 color: #ffbd00;
+                text-transform: capitalize;
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+                line-height: 35px;
+                text-shadow: 0 0 1px #000;
+            }
+            .slogan-topline{
+                color: #224b84;
+            }
+            .slogan-botline{
+                color: #e79d3e;
+                font-style: italic;
             }
             .top-right-menu{
                 width: 50%;
@@ -441,13 +463,20 @@
                 text-align: center;
                 padding-top: 10px;
                 font-weight: 800;
-                font-family: Arial;
+                font-family: 'Alexandria', sans-serif;
                 font-size: 1rem;
             }
+            .top-right-menu .corp-code .corp-text{
+                color: #e79d3e;
+                font-size: 1.4rem;
+                letter-spacing: 1px;
+                text-shadow: 0 0 0.1px #000;
+            }
             .top-right-menu .corp-code .upg{
-                font-size: 2rem;
+                font-size: 3rem;
                 position: relative;
-                top: -10px;
+                top: 0px;
+                font-weight: 800;
             }
             .top-right-menu .news{
                 width: 65%;
@@ -459,12 +488,14 @@
             }
 
             .bot-menu{
-                height: 13vh;
+                height: 10vh;
             }
             .main-menu-wraper{
                 height: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+                margin: 0;
+                width: 100%;
             }
             .main-menu-wraper::before{
                 display: none;
@@ -475,12 +506,13 @@
                 font-weight: 800;
                 color: #000;
                 text-transform: uppercase;
-                font-family: Arial;
+                font-family: 'Alexandria', sans-serif;
                 position: relative;
-                top: -10px;
+                top: -25px;
+                font-size: 1.1rem;
             }
             .main-menu-wraper .main-menu-item a{
-                
+                font-family: 'Alexandria', sans-serif;
             }
             .main-menu-wraper .main-menu-item a img{
                 width: 150px;
@@ -494,21 +526,40 @@
                 font-weight: 800;
                 color: #dba408;
             }
+
+            
         </style>
+
+        {{-- Google font --}}
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Alexandria&family=Varela+Round&display=swap');
+            /* font-family: 'Alexandria', sans-serif;
+            font-family: 'Varela Round', sans-serif; */
+        </style>
+
 
     </head>
     <body class="home page page-id-1579 page-template page-template-template page-template-home-template page-template-templatehome-template-php">
         <div id="main-wrapper" class="clearfix">
             
 
-            <header id="header-project container">
+            <header id="header-project container-fluid">
                 <div class="top-menu container-fluid">
                     <div class="top-left-menu">
-                        Turkey project solution<br/>We buils assets
+                        <span class="slogan-topline">
+                            Turkey project solution<br/>
+                        </span>
+                        <span class="slogan-botline">
+                            - We buils assets -
+                        </span>
+                        
                     </div>
                     <div class="top-right-menu">
                         <div class="corp-code">
-                            Corp Code:<br/>
+                            <span class="corp-text">
+                                Corp Code:<br/>
+                            </span>
+                            
                             <span class="upg">UPG</span>
                         </div>
                         <div class="news">
@@ -517,7 +568,7 @@
                     </div>
                 </div>
                 <div class="bot-menu">
-                    <div class="main-menu-wraper container">
+                    <div class="main-menu-wraper container-fluid">
                         <div class="main-menu-item">
                             <a href="{{ asset('/')}}">
                                 Home
@@ -561,45 +612,47 @@
             <div id="main" class="site-main clearfix">
                 <div id="main" class="site-main clearfix" style="">
                     
+                    <div class="breadcumb-cover">
+                        <div class="info container" style="padding-bottom: 20px;">
+                            <span class="bread-title">
+                                <i class="fa fa-lg fa-home"></i>
+                                <a href="{{ asset('/#projects') }}"> @lang('messages.project_detail_breadcumb_home') </a>
+                            </span>
 
+                            <span class="bread-title">
+                                <i class="fa fa-lg fa-caret-right"></i>
+                                <a href="{{ asset('project') }}"> @lang('messages.project_detail_breadcumb_project') </a>
+                            </span>
+                            <span class="bread-title">
+                                <i class="fa fa-lg fa-caret-right"></i>
+
+                                @switch( Config::get('app.locale') )
+                                    @case('vi')
+                                        {{ $project_item->pro_ten_vi }}
+                                        @break
+                                    @case('en')
+                                        {{ $project_item->pro_ten_en }}
+                                        @break
+                                    @case('zh')
+                                        {{ $project_item->pro_ten_zh }}
+                                        @break
+                                    @case('ja')
+                                        {{ $project_item->pro_ten_ja }}
+                                        @break
+                                    @case('kr')
+                                        {{ $project_item->pro_ten_kr }}
+                                        @break
+                                @endswitch   
+                            </span>
+                        </div>
+                    </div>
                    
 
                     <section id="content" class="clearfix">
                         <div class="room-detail-wrap wrapper clearfix" style="padding-top: 20px; padding-bottom: 0; background: transparent;">
                             <div class="container" style="">
                                 <!--Breadcumb-->
-                                <div class="info" style="padding-bottom: 20px;">
-                                    <span class="bread-title">
-                                        <i class="fa fa-lg fa-home"></i>
-                                        <a href="{{ asset('/#projects') }}"> @lang('messages.project_detail_breadcumb_home') </a>
-                                    </span>
-
-                                    <span class="bread-title">
-                                        <i class="fa fa-lg fa-caret-right"></i>
-                                        <a href="{{ asset('project') }}"> @lang('messages.project_detail_breadcumb_project') </a>
-                                    </span>
-                                    <span class="bread-title">
-                                        <i class="fa fa-lg fa-caret-right"></i>
-
-                                        @switch( Config::get('app.locale') )
-                                            @case('vi')
-                                                {{ $project_item->pro_ten_vi }}
-                                                @break
-                                            @case('en')
-                                                {{ $project_item->pro_ten_en }}
-                                                @break
-                                            @case('zh')
-                                                {{ $project_item->pro_ten_zh }}
-                                                @break
-                                            @case('ja')
-                                                {{ $project_item->pro_ten_ja }}
-                                                @break
-                                            @case('kr')
-                                                {{ $project_item->pro_ten_kr }}
-                                                @break
-                                        @endswitch   
-                                    </span>
-                                </div>
+                                
 
                                 <div class="row">
                                     <div class="clearfix" style="margin-bottom: 40px;">
@@ -669,6 +722,7 @@
                                                         font-weight: bold;
                                                         color: #8e0c0c;
                                                         padding-left: 5px;
+                                                        font-family: 'Alexandria', sans-serif;
                                                     }
                                                     #project-nation-flag div{
                                                         float: left;
@@ -679,6 +733,7 @@
                                                     }
                                                     #info-table .table-title{
                                                         width: 25%;
+                                                        font-family: 'Alexandria', sans-serif;
                                                     }
                                                     @media(max-width: 768px){
                                                         #table{
@@ -1109,6 +1164,7 @@
                     letter-spacing: 1px;
                     margin-bottom: 2px;
                     text-transform: uppercase;
+                    font-family: 'Alexandria', sans-serif;
                 }
                 
             </style>
@@ -1124,9 +1180,7 @@
                             <!-- Footer Logo -->
                             <div class="logo-img"><img alt="" width="100px" src="{{ asset('public/upload/template/'. $getindex->homepage_logo) }}" /></div>
                             
-                            <!-- Copyright -->
                             <div class="copyright">All rights reserved. Copyright © 2022 <a class="accent-color" href="#">TuanAnhDinh.vn</a></div>
-                            <!-- Social Icons -->
                             
                         </div>
                     

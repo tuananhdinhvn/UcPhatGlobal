@@ -1,17 +1,20 @@
    <!-- Start Header -->
 <header id="header" class="header-2 dark-header" style="height: 15vh; z-index: 1000;">
 
-	<div class="container wrap-header" style="height: 100%;">
+	<div class="container-fluid wrap-header" style="height: 100%;">
                
         <div id="header-info" style="height: 40%;">
             <div class="grid-header-item slogan">
-                <span>
-                    Turkey project solution<br/>
-                    We build assets
+                <span class="slogan-topline">
+                    Turkey Project Solution<br/>
+                </span>
+                    
+                <span class="slogan-botline">   
+                    - We Build Assets -
                 </span>
             </div>
             <div class="grid-header-item">
-				<h2 class="corp-code"><span style="font-size: 1.2rem;">Corp code:</span> <br/>UPG</h2>
+				<h2 class="corp-code"><span class="corp-text" style="">Corp Code:</span> <br/>UPG</h2>
                 
                 <span class="news-line" style="justify-content: center; text-align: center;">
                     

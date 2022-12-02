@@ -1,5 +1,5 @@
 <!-- Start Contact Section -->
-<div id="contact-us"></div>
+<div id="contact-us" style="height: 5vh;"></div>
 <h2 class="section-title" style="margin-top: 100px">@lang('messages.contact_title')</h2>
 <div id="contact" class="section contact-section light-section" style="padding-top:20px; background:#fff; border-bottom: #111 1px;">
 

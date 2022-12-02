@@ -6,7 +6,7 @@
 <head>
   
     <!-- Basic -->
-	<title>Uc Phat Group</title>
+	<title>{{ $setting_info[0]->st_title }}</title>
     
     <!-- Define Charset -->
 	<meta charset="utf-8">
@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <!-- Page Description and Author -->
-    <meta name="description" content="Uc Phat Group">
+    <meta name="description" content="{{ $setting_info[0]->st_mota }}">
     <meta name="author" content="tuananhdinh.vn">
     
     <!-- Favicon -->
@@ -52,15 +52,29 @@
         /* Custom scroll bar */
     </style>
 
+    {{-- Google font --}}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alexandria&family=Varela+Round&display=swap');
+        /* font-family: 'Alexandria', sans-serif;
+        font-family: 'Varela Round', sans-serif; */
+    </style>
+
 </head>
 <body>
 
     <header id="header-project">
-        <div class="container">
+        <div class="container-fluid">
             <div class="menu-top">
-                <div class="menu-top-left">Turkey project solution<br/>We buils assets</div>
+                <div class="menu-top-left">
+                    <span class="slogan-topline">
+                        Turkey Project Solution<br/>
+                    </span>
+                    <span class="slogan-botline">
+                        - We Buils Assets -
+                    </span>
+                </div>
                 <div class="menu-top-right">
-                    <div class="corp-code">Corp code: <br/><span class="sorp-code-signal">UPG</span></div>
+                    <div class="corp-code"> <span class="corp-text">Corp code: </span> <br/><span class="sorp-code-signal">UPG</span></div>
                     <div class="news">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -104,91 +118,135 @@
     
 
     <div class="project-label-wrap">
-        <div class="project-major-label container">
-            <div>
-                <h3>All</h3>
-                <h3>Food</h3>
-                <h3>Pharmacy</h3>
-                <h3>Logistics</h3>
-                <h3>Furniture</h3>
+        <div class="project-major-label container" style="margin: 0; width: 100%;">
+            <div id="major-header-filter">
+                <h3 data-filter="*" class="show-all">All</h3>
+                @foreach ($major_list as $major_item)
+                    <h3 class="major-filer" data-filter="{{ $major_item->major_id }}">
+                        @switch( Config::get('app.locale') )
+                            @case('vi')
+                                {{ $major_item->major_name_vi }}
+                                @break
+                            @case('en')
+                                {{ $major_item->major_name_en }}
+                                @break
+                            @case('zh')
+                                {{ $major_item->major_name_zh }}
+                                @break
+                            @case('ja')
+                                {{ $major_item->major_name_ja }}
+                                @break
+                            @case('kr')
+                                {{ $major_item->major_name_kr }}
+                                @break
+                        @endswitch 
+                    </h3>
+                @endforeach
+                
+                
             </div>
             
         </div>
     </div>
     
+
+    <style>
+        .project-section{
+            min-height: 55vh;
+        }
+    </style>
     
-    <div class="project-list-wrap">
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
+    <div class="project-section">
+        <div class="project-list-wrap">
+
+            @foreach ($project_list as $item)
+                <div class="project-item" data-value="{{ $item->pro_major_id }}">
+                    <a href="{{ asset('project/'.$item->pro_id) }}">
+                        <div class="project-item-cover">
+                            @switch( Config::get('app.locale') )
+                                @case('vi')
+                                    {{ $item->pro_ten_vi }}
+                                    @break
+                                @case('en')
+                                    {{ $item->pro_ten_en }}
+                                    @break
+                                @case('zh')
+                                    {{ $item->pro_ten_zh }}
+                                    @break
+                                @case('ja')
+                                    {{ $item->pro_ten_ja }}
+                                    @break
+                                @case('kr')
+                                    {{ $item->pro_ten_kr }}
+                                    @break
+                            @endswitch 
+                        </div>
+                        <img src="{{ asset('public/upload/product/'.$item->pro_thumb) }}" alt="">
+                    </a>
+                </div>
+            @endforeach
+            
         </div>
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
-        </div>
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
-        </div>
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
-        </div>
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
-        </div>
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
-        </div>
-        <div class="project-item">
-            <div class="project-item-cover">
-                Project name
-            </div>
-            <img src="https://www.sustainableplaces.eu/wp-content/uploads/2017/02/SmartBuilding.jpg" alt="">
-        </div>
-        
     </div>
     
     
-<!-- Start Footer -->
-<div id="footer" class="section footer-section light-section">
-
-	<div class="container">
     
-    	<div class="row">
+    <!-- Start Footer -->
+    <div id="footer" class="section footer-section light-section">
+
+        <div class="container">
         
-        	<div class="col-md-12">
-                <!-- Footer Logo -->
-            	<div class="logo-img"><img alt="" width="100px" src="public/upload/info/logo-main.png" /></div>
-                
-                <!-- Copyright -->
-                <div class="copyright">All rights reserved. Copyright © 2022 <a class="accent-color" href="#">TuanAnhDinh.vn</a></div>
-                <!-- Social Icons -->
+            <div class="row">
+            
+                <div class="col-md-12">
+                    <!-- Footer Logo -->
+                    <div class="logo-img"><img alt="" width="100px" src="public/upload/info/logo-main.png" /></div>
+                    
+                    <!-- Copyright -->
+                    <div class="copyright">All rights reserved. Copyright © 2022 <a class="accent-color" href="#">TuanAnhDinh.vn</a></div>
+                    <!-- Social Icons -->
+                </div>
+            
             </div>
         
         </div>
-    
+        
     </div>
-    
-</div>
-<!-- End Footer -->
+    <!-- End Footer -->
 
 
-<script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.min.js"></script>
+
+
+    <script>
+
+        var project_header  = $( "#major-header-filter" ).find( ".major-filer" );
+        var project_lists   = $( ".project-list-wrap" ).find( ".project-item" );
+
+
+        $(".major-filer").click(function(){
+
+            var project_filter_value = $(this).attr( "data-filter" );
+
+            $(project_lists).each(function(){
+                $(this).css("display", "none");
+            });
+
+            $(project_lists).each(function(){
+                if( project_filter_value == "*" ){
+                    $(".project-item").css("display", "block");
+                } else if ( $(this).attr("data-value") == project_filter_value ){
+                    $(this).css("display", "block");
+                } 
+            });
+
+        });
+
+        $(".show-all").click(function(){
+            $(".project-item").css("display", "block");
+        });
+    </script>
+
 
 </body>
 </html>

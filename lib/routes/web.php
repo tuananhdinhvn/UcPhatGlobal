@@ -167,13 +167,14 @@ Route::group(['namespace' => 'admin'], function () {
             Route::get('add', 'ProjectController@addProject')->middleware('CheckLogout')->name('admin.project.add');
             Route::post('add', 'ProjectController@postaddProject');
 
-            Route::get('detail/{id}', 'ProductController@getProjectDetail')->middleware('CheckLogout');
-            Route::post('detail/{id}', 'ProductController@postProjectDetail');
+            Route::get('detail/{id}', 'ProjectController@getProjectDetail')->middleware('CheckLogout');
+            Route::post('detail/{id}', 'ProjectController@postProjectDetail');
             
-            Route::get('show-progress/{id}', 'ProductController@checkshowProgress')->middleware('CheckLogout');
+            Route::get('show-progress/{id}', 'ProjectController@checkshowProgress')->middleware('CheckLogout');
 
+            Route::get('show/{id}', 'ProjectController@checkshowProject')->middleware('CheckLogout');
 
-            Route::get('delete/{id}', 'ProductController@deleteProduct')->middleware('CheckLogout');
+            Route::get('delete/{id}', 'ProjectController@deleteProject')->middleware('CheckLogout');
 			
 			
 			

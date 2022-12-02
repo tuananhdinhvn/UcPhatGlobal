@@ -6,7 +6,7 @@
 <head>
   
     <!-- Basic -->
-	<title>Uc Phat Group</title>
+	<title>{{ $setting_info[0]->st_title }}</title>
     
     <!-- Define Charset -->
 	<meta charset="utf-8">
@@ -15,11 +15,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <!-- Page Description and Author -->
-    <meta name="description" content="Uc Phat Group">
+    <meta name="description" content="{{ $setting_info[0]->st_mota }}">
     <meta name="author" content="tuananhdinh.vn">
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="public/upload/info/favicon.png">
+    <link rel="shortcut icon" href="{{ asset('public/upload/template/'. $getindex->homepage_logo_plus) }}">
 
     
     <!-- Bootstrap CSS Styles -->
@@ -120,6 +120,13 @@
             border-radius: 10px;
         }
         /* Custom scroll bar */
+    </style>
+
+    {{-- Google font --}}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alexandria&family=Varela+Round&display=swap');
+        /* font-family: 'Alexandria', sans-serif;
+        font-family: 'Varela Round', sans-serif; */
     </style>
 
 </head>

@@ -5,7 +5,7 @@
 <h2 class="service-title-name">@lang('messages.service_title')</h2>
 <div class="">
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="service-label-head">
             <div class="service-label-tab-head service-design-label service-visible-display">
                 <div class="service-underline-indicator service-design-underline service-visible-display"></div> 
@@ -96,7 +96,7 @@
 
     {{-- Design --}}
     <div class="service-wrap-item service-item-content-inside service-design-content">
-        <div class="service-item-block-left">
+        <div class="service-item-block-left service-item-design">
             <p>
                 @switch( Config::get('app.locale') )
                     @case('vi')
@@ -161,7 +161,12 @@
 
     {{-- Management --}}
     <div class="service-wrap-item service-item-content-inside service-management-content service-hidden-display">
-        <div class="service-item-block-left">
+        <div class="service-item-block-left service-item-management" style="">
+            <img src="public\pic\24701-nature-natural-beauty.jpg" alt="">
+            <div class="service-item-bg-left"></div>
+        </div>
+        
+        <div class="service-item-block-right service-des-management">
             <p>
                 @switch( Config::get('app.locale') )
                     @case('vi')
@@ -182,10 +187,7 @@
                 @endswitch 
             </p>
         </div>
-        <div class="service-item-block-right">
-            <img src="public\pic\24701-nature-natural-beauty.jpg" alt="">
-            <div class="service-item-bg-left"></div>
-        </div>
+        
 
         <div class="swiper mySwiper service-inside service-item-slide-inside">
             <div class="swiper-wrapper">
@@ -225,7 +227,7 @@
 
     {{-- Construction --}}
     <div class="service-wrap-item service-item-content-inside service-construction-content service-hidden-display">
-        <div class="service-item-block-left">
+        <div class="service-item-block-left service-item-construction">
             <p>
                 @switch( Config::get('app.locale') )
                     @case('vi')
@@ -289,6 +291,11 @@
 
     {{-- Development --}}
     <div class="service-wrap-item service-item-content-inside service-development-content service-hidden-display">
+        <div class="service-item-block-left service-item-development" style="">
+            <img src="public\pic\24701-nature-natural-beauty.jpg" alt="">
+            <div class="service-item-bg-left"></div>
+        </div>
+        
         <div class="service-item-block-left">
             <p>
                 @switch( Config::get('app.locale') )
@@ -311,10 +318,7 @@
 
             </p>
         </div>
-        <div class="service-item-block-right">
-            <img src="public\pic\24701-nature-natural-beauty.jpg" alt="">
-            <div class="service-item-bg-left"></div>
-        </div>
+        
 
         <div class="swiper mySwiper service-inside service-item-slide-inside">
             <div class="swiper-wrapper">

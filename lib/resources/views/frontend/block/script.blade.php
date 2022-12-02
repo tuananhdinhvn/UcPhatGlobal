@@ -16,17 +16,9 @@
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.nav.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.isotope.min.js"></script>
-{{-- <script type="text/javascript" src="https://zoomarts.works/html/relway/js/counter.js"></script>
-<script type="text/javascript" src="https://zoomarts.works/html/relway/js/imagesloaded.min.js"></script>
-<script type="text/javascript" src="https://zoomarts.works/html/relway/js/smooth-scroll.js"></script> --}}
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/contact-form.js"></script>
 <script type="text/javascript" src="https://zoomarts.works/html/relway/js/portfolio.js"></script>
 <script type="text/javascript" src="js/main_upg.js"></script>
-
-{{-- toogle langs --}}
-<script>
-  
-</script>
 
 {{-- About timeline --}}
 <script src="js/timeline.js"></script>
@@ -90,7 +82,7 @@
       });
 
   var whyustech = new Swiper(".why-us-tech-item", {
-          slidesPerView: 6,
+          slidesPerView: 5,
           spaceBetween: 30,
           slidesPerGroup: 4,
           loop: true,
@@ -119,7 +111,7 @@
 
   // Service items
   var swiper3 = new Swiper(".service-inside", {
-          slidesPerView: 3,
+          slidesPerView: 5,
           spaceBetween: 30,
           slidesPerGroup: 4,
           loop: true,
@@ -211,10 +203,6 @@
     });
 
   });
-
-  
-
- 
 
 </script>
 

@@ -26,8 +26,14 @@
         <!-- Slogan -->
         <div class="company-slogan">
             <h2>
-                Turnkey Project Solution<br/>
-                We build Assets
+                <span class="slogan-top">
+                    Turnkey Project Solution<br/>
+                </span>
+                <span class="slogan-bot">
+                    - We Build Assets -
+                </span>
+                
+                
             </h2>
         </div>
     	

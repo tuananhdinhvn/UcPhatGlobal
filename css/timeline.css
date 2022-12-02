@@ -22,7 +22,7 @@
   font-size: 15px;
   box-sizing: border-box;
   color: rgb(255 255 255);
-  font-family: Cardo;
+  font-family: 'Varela Round', sans-serif;
   font-weight: 500;
   line-height: 25px;
 }
@@ -50,6 +50,16 @@
   display: flex;
   position: relative;
   transform: translateY(-80px);
+}
+.timeline-item:hover {
+  opacity: 1;
+  filter: blur(0px);
+  cursor: pointer;
+}
+.timeline-item:hover .timeline-item:before {
+  opacity: 1;
+  filter: blur(0px);
+  cursor: pointer;
 }
 .timeline-item:before {
   content: attr(data-text);
@@ -139,15 +149,15 @@
 }
 .timeline-header__title {
     color: #fff;
-    font-size: 55px;
-    font-family: "Pathway Gothic One", sans-serif;
+    font-size: 45px;
+    font-family: 'Alexandria', sans-serif;
     font-weight: normal;
     margin: 0;
     text-transform: uppercase;
 }
 .timeline-header__subtitle {
   color: rgba(255, 255, 255, 0.5);
-  font-family: "Pathway Gothic One", sans-serif;
+  font-family: 'Alexandria', sans-serif;
   font-size: 16px;
   letter-spacing: 5px;
   margin: 10px 0 0 0;

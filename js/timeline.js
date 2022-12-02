@@ -33,3 +33,9 @@
   }
 })(jQuery);
 $("#timeline-1").timeline();
+
+
+
+$( ".timeline-item" ).hover(function() {
+  $( this ).toggleClass( "timeline-item--active" );
+});

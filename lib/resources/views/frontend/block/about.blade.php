@@ -67,7 +67,7 @@
 
     <h2 class="section-title" style="position: relative; top: -19px;">@lang('messages.whyus_title')</h2>
  
-    <div class="container why-us-wrap" >
+    <div class="container-fluid why-us-wrap" >
         <div class="tabs ">
             <input type="radio" id="tab1" name="tab-control" checked />
             <input type="radio" id="tab2" name="tab-control" />
@@ -141,13 +141,10 @@
                         </div>
                         <div class="tech-img-big-2">
                             <img class="" src="https://minhglobal.com/public/upload/template/1603079241Tech1.jpg" alt="">
-                        </div>
-
-
-                      
+                        </div>                      
                     </div>
 
-                    <div class="swiper mySwiper why-us-tech-item">
+                    <div class="swiper mySwiper why-us-tech-item" style="position: relative; top: 50px;">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide tech-item-wrap">
                                 <img class="tech-item-img" src="https://minhglobal.com/public/upload/image/16018310801601622121SITE%20CAMERA.png" alt=""><br/>
