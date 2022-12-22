@@ -130,7 +130,7 @@
                         </div>
                     </div>
 
-                    <hr/>
+                    {{-- <hr/>
 
                     <div class="form-group">
                         <label class="col-sm-2 col-sm-2 control-label">Mô tả<br>(Tiếng Việt): </label>
@@ -165,7 +165,7 @@
                         <div class="col-sm-10">
                             <textarea name="event_description_kr" id="" style="width:100%;" rows="10">{{ $timeline_item->event_description_kr }}</textarea>
                         </div>
-                    </div>
+                    </div> --}}
 
                   
                     

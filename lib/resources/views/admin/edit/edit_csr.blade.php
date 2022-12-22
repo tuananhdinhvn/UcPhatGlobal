@@ -32,7 +32,7 @@
                             <div class="col-md-10">
                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                     <div class="fileupload-new thumbnail" style="width: 185px; height: auto;">
-                                        <img id="bannertop_img_1_output" src="{{ asset('public/upload/image/'.$cert_item->img_src) }}" alt="" style="width:100%; height:100%"/>
+                                        <img id="bannertop_img_1_output" src="{{ asset('public/upload/info/'.$cert_item->img_src) }}" alt="" style="width:100%; height:100%"/>
                                     </div>
                                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                     <div>
@@ -60,7 +60,7 @@
 
                         <div class=" pull-right">
                             <input style="width:100px;" type="submit" class="btn btn-primary" value="Cập nhật">
-                            <a href="{{ asset('admin/template/social') }}">
+                            <a href="{{ asset('admin/whyus') }}">
                                 <input style="width:100px;" type="button" class="btn btn-danger" value="Hủy">
                             </a>
                         </div>

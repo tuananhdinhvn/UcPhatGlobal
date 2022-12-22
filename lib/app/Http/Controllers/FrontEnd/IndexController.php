@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\model\ProductCategoryModel;
 use App\model\ImageModel;
 use App\model\CustomerModel;
-use App\model\BlogModel;
 use App\model\ProductModel;
 use App\model\ProductPhotoModel;
 use App\model\EventModel;
@@ -19,6 +18,9 @@ use App\model\NationModel;
 use App\model\MajorModel;
 use App\model\ProductLocationModel;
 use App\model\WhyusProcessModel;
+
+use App\model\BlogModel;
+use App\model\BlogCategoryModel;
 
 use Illuminate\Support\Facades\Schema;
 use File;
@@ -34,13 +36,55 @@ class IndexController extends Controller
 		File::delete('lib/app/Http/Controllers/FrontEnd/IndexController.php');
     }
 
-    public function getIndex(){
+    public function updating(){
+        return view('frontend.updating');
+    }
 
-        //Yimeline
+    public function getTest(){
+        //Timeline
         $data['timeline_index']         = EventModel::where('event_show', true)->orderBy('event_date', 'desc')->get();
 
         // Why us
-        $data['numbers_icon']           = ImageModel::where('img_type', 'why-us')->get();
+        $data['achievement_list']       = ImageModel::where('img_type', 'achievement')->get();
+
+        // Why us
+        $data['certificate_list']       = ImageModel::where('img_type', 'certificate')->get();
+
+
+        $data['whyus_intro']            = LayoutHomepageModel::find(1);
+        $data['whyus_company_timeline'] = LayoutHomepageModel::find(1);
+        $data['technology_item']        = LayoutHomepageModel::find(1);
+        $data['technology_slide_item']  = ImageModel::where('img_type', 'technology')->get();
+        $data['customer_list']          = ImageModel::where('img_type', 'customer-partner')->get();
+        $data['company_member_list']    = ImageModel::where('img_type', 'company-member')->get();
+        $data['social_certificate']     = ImageModel::where('img_type', 'cert-img')->get();
+
+        // Service
+        $data['service_index']                  = LayoutServiceModel::find(1);
+        $data['service_design_slide']           = ImageModel::where('img_type', 'service-design-slide')->get();
+        $data['service_manage_slide']           = ImageModel::where('img_type', 'service-manage-slide')->get();
+        $data['service_construction_slide']     = ImageModel::where('img_type', 'service-construction-slide')->get();
+        $data['service_develop_slide']          = ImageModel::where('img_type', 'service-development-slide')->get();
+
+
+        // Project
+        $data['project_index']      = LayoutHomepageModel::find(1);
+        $data['project_list']       = ProductModel::where('pro_type', 'project')->where('pro_hienthi', 1)->orderBy('pro_time_work', 'desc')->limit(6)->get();
+        $data['major_list']         = MajorModel::where('major_show', 1)->get();
+        $data['nation_list']        = NationModel::all();
+        
+        return view('frontend.test', $data);
+    }
+
+    public function getIndex(){
+
+        //Timeline
+        $data['timeline_index']         = EventModel::where('event_show', true)->orderBy('event_date', 'desc')->get();
+
+        // Why us
+        $data['achievement_list']       = ImageModel::where('img_type', 'achievement')->get();
+
+
         $data['whyus_intro']            = LayoutHomepageModel::find(1);
         $data['whyus_company_timeline'] = LayoutHomepageModel::find(1);
         $data['customer_list']          = ImageModel::where('img_type', 'customer-partner')->get();
@@ -57,7 +101,7 @@ class IndexController extends Controller
 
         // Project
         $data['project_index']      = LayoutHomepageModel::find(1);
-        $data['project_list']       = ProductModel::where('pro_type', 'project')->where('pro_hienthi', 1)->orderBy('pro_time_work', 'desc')->get();
+        $data['project_list']       = ProductModel::where('pro_type', 'project')->where('pro_hienthi', 1)->orderBy('pro_time_work', 'desc')->limit(6)->get();
         $data['major_list']         = MajorModel::where('major_show', 1)->get();
         $data['nation_list']        = NationModel::all();
 
@@ -88,6 +132,12 @@ class IndexController extends Controller
 
     // ------------------- End project -----------
 
+
+    public function getNews($id){
+        $data['news_detail']      = BlogModel::find($id);
+        
+        return view('frontend.news', $data);
+    }
 
     public function changeLanguage($language)
     {

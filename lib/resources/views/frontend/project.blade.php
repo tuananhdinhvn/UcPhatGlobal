@@ -21,12 +21,19 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('public/upload/template/'. $getindex->homepage_logo_plus) }}">
 
+
+     <link rel="stylesheet" href="{{ asset('css/upg/swiper-bundle.min.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('css/upg/upg.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/upg/index.css') }}">
+
+
     <!-- Bootstrap CSS Styles -->
     <link rel="stylesheet" href="https://zoomarts.works/html/relway/css/bootstrap.min.css" type="text/css" media="screen" />
     
     <!-- Icons Font CSS Styles -->
     <link rel="stylesheet" type="text/css" href="https://zoomarts.works/html/relway/css/icons.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="https://zoomarts.works/html/relway/css/font-awesome.min.css" media="screen" />
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
     
     <!-- Custom project CSS -->
     <link rel="stylesheet" type="text/css" href="css/upg/project.css" media="screen" />
@@ -54,67 +61,201 @@
 
     {{-- Google font --}}
     <style>
+        /* Topline slogan */
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+        /* Botline slogan */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Alexandria&family=Varela+Round&display=swap');
         /* font-family: 'Alexandria', sans-serif;
         font-family: 'Varela Round', sans-serif; */
     </style>
 
+    <style>
+        .menu-top-left{
+            line-height: 35px !important;
+        }
+        .top-menu .menu-top-left .slogan-top-line{
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;
+            color: #244d86;
+            font-weight: 800;
+        }
+        .top-menu .menu-top-left .slogan-bot-line {
+            font-family: 'Nunito', sans-serif;
+            font-size: 27px;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: #865f2b;
+            font-weight: bold;
+        }
+        .top-menu .menu-top-right .corp-code{
+            line-height: 35px;
+        }
+        .top-menu .menu-top-right .corp-code .corp {
+            font-size: 22px !important;
+        }
+        .top-menu .menu-top-right .corp-code .code {
+            font-size: 40px;
+        }
+
+        .top-menu .menu-top-right .news-list{
+            padding-top: 10px;
+        }
+        .top-menu .menu-top-right .news-list .news-title{
+            font-size: 22px;
+        }
+
+        header{
+            height: 150px;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 2fr;
+        }
+        .slogan{
+            height: 100%;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .slogan .slogan-topline{
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;
+            color: #244d86;
+        }
+        .slogan .slogan-botline{
+            font-family: 'Nunito', sans-serif;
+            font-size: 25px;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: #865f2b;
+            font-weight: bold;
+        }
+        .logo{
+            text-align: center;
+            width: 100%;
+            /* top: 20px; */
+            z-index: 1;
+            padding-top: 20px;
+        }
+        .logo img{
+            width: 150px;
+        }
+        .company-name{
+            font-family: 'Alexandria', sans-serif;
+            text-transform: uppercase;
+            font-weight: 800;
+            /* height: 10vh; */
+            justify-content: center;
+            color: #bd7e2a;
+        }
+        .corp-code{
+            text-align: center;
+            font-size: 20px;
+            text-transform: capitalize;
+            font-weight: bold;
+            font-family: 'Nunito', sans-serif;
+            color: #bd7e2a;
+            font-style: italic;
+            letter-spacing: 1px;
+            padding-top: 15px;
+            line-height: 35px;
+        }
+        .code{
+            font-family: 'Oswald', sans-serif;
+            font-size: 35px;
+            color: #244d86;
+            font-style: initial;
+        }
+        .news{
+            padding-top: 20px;
+            text-align: center;
+            padding-right: 20px;
+            z-index: 10;
+        }
+        .news-menu-title{
+            color: #bd7e2a;
+            font-weight: bold;
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            text-transform: capitalize;
+            font-style: italic;
+        }
+        .news a{
+            font-family: 'Oswald', sans-serif;
+            font-style: italic;
+            color: #9b9898;
+            height: 50px;
+            z-index: 100;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 17px;
+            padding-top: 15px;
+        }
+        .news a:hover{
+            color: #000;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
 
-    <header id="header-project">
-        <div class="container-fluid">
-            <div class="menu-top">
-                <div class="menu-top-left">
-                    <span class="slogan-topline">
-                        Turkey Project Solution<br/>
-                    </span>
-                    <span class="slogan-botline">
-                        - We Buils Assets -
-                    </span>
-                </div>
-                <div class="menu-top-right">
-                    <div class="corp-code"> <span class="corp-text">Corp code: </span> <br/><span class="sorp-code-signal">UPG</span></div>
-                    <div class="news">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="menu-bot">
-                <h3 class="menu-item"><span><a href="{{ asset('/')}}">Home</a></span></h3>
-                <h3 class="menu-item"><span><a href="{{ asset('/#why-us')}}">@lang('messages.menu_why_us')</a></span> </h3>
-                <h3 class="menu-item"><span><a href="{{ asset('/#our-service')}}">@lang('messages.menu_services')</a></span></h3>
-                <h3 class="menu-item">
-                    
-                        <div class="logo-main">
-                            <a href="{{ asset('/')}}">
-                                <img src="{{ asset('public/upload/template/'. $getindex->homepage_logo) }}" alt="">
-                            </a>
-                        </div>
-                        <a href="{{ asset('/')}}">
-                            <span class="logo-slogan">Uc phat global</span>
-                        </a>
-                        
-                </h3>
-                <h3 class="menu-item"><span><a href="{{ asset('/#our-projects')}}">@lang('messages.menu_projects')</a></span></h3>
-                <h3 class="menu-item"><span><a href="{{ asset('/#contact-us')}}">@lang('messages.menu_contact_us')</a></span></h3>
-                <h3 class="menu-item lang-menu"><span><a>Language</a></span>
-                    <div class="lang-items">
-                        <div class="lang-item"><a href="{!! route('user.change-language', ['vi']) !!}" >Tiếng Việt</a></div>
-                        <div class="lang-item"><a href="{!! route('user.change-language', ['en']) !!}" >English</a></div>
-                        <div class="lang-item"><a href="{!! route('user.change-language', ['zh']) !!}">中 文</a></div>
-                        <div class="lang-item"><a href="{!! route('user.change-language', ['ja']) !!}">日 本 語</a></div>
-                        <div class="lang-item"><a href="{!! route('user.change-language', ['kr']) !!}">한국어</a></div>
-                    </div>
-                </h3>
-            </div>
+    <header>
+        <div class="slogan">
+            <span class="slogan-topline">
+                @lang('messages.slogan_topline')<br/>
+            </span>
+            <span class="slogan-botline">
+                @lang('messages.slogan_botline')
+            </span>
+        </div>
+        <div class="logo">
+            <a href="{{ route('index') }}" style="text-decoration: none;">
+                <img src="{{ asset('public/upload/info/logo-main.png') }}" alt="">
+                <p class="company-name">Uc Phat Global</p>
+            </a>
         </div>
         
+        <div class="corp-code">
+            @lang('messages.corp_code')<br/>
+            <span class="code">UPG</span>
+        </div>
+        <div class="news">
+            <span class="news-menu-title">On the news:</span><br/>
+
+            <div class="swiper top-news" style="margin-top: 15px; height: 70px;">
+                <div class="swiper-wrapper">
+                    
+                    @foreach ($news_list as $news_item)
+                        <div class="swiper-slide" style="height: 20px; margin-bottom: 10px;">
+                            <a href="{{ asset('news/'.$news_item->blog_id) }}">
+                                @switch( Config::get('app.locale') )
+                                    @case('vi')
+                                        {{ str_limit($news_item->blog_ten_vi, 50) }}
+                                        @break
+                                    @case('en')
+                                        {{ str_limit($news_item->blog_ten_en, 50) }}
+                                        @break
+                                    @case('zh')
+                                        {{ str_limit($news_item->blog_ten_zh, 50) }}
+                                        @break
+                                    @case('ja')
+                                        {{ str_limit($news_item->blog_ten_ja, 50) }}
+                                        @break
+                                    @case('kr')
+                                        {{ str_limit($news_item->blog_ten_kr, 50) }}
+                                        @break
+                                @endswitch  
+                            </a>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+            
+            
+        </div>
     </header>
+
+    
     
 
     <div class="project-label-wrap">
@@ -155,7 +296,7 @@
             min-height: 55vh;
         }
     </style>
-    
+
     <div class="project-section">
         <div class="project-list-wrap">
 
@@ -214,8 +355,31 @@
     </div>
     <!-- End Footer -->
 
+    <!-- Filter button -->
+    <div id="filter-icon">
+        <i class="fa fa-home"></i>
+    </div>
+    <!-- End Filter button -->
+
+    @include('frontend.section.script')
 
     <script type="text/javascript" src="https://zoomarts.works/html/relway/js/jquery.min.js"></script>
+
+    <!-- News Swiper Plus -->
+    <script>
+        var swiper = new Swiper(".top-news", {
+            direction: "vertical",
+            spaceBetween: 30,
+            autoplay: true,
+            loop: true,
+            slidesPerView: 2,
+            mousewheel: true,
+            pagination: {
+                el: ".news-swiper-dot",
+                clickable: true,
+            },
+        });
+    </script>
 
 
     <script>

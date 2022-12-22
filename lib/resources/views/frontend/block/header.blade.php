@@ -16,6 +16,7 @@
             <div class="grid-header-item">
 				<h2 class="corp-code"><span class="corp-text" style="">Corp Code:</span> <br/>UPG</h2>
                 
+                <span>On the News:</span>
                 <span class="news-line" style="justify-content: center; text-align: center;">
                     
                     <div class="swiper mySwiper4 news-swiper" style="">

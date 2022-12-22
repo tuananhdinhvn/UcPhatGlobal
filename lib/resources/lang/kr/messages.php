@@ -18,6 +18,10 @@ return [
     "menu_achievements"     => "업적",
     "menu_contact_us"       => "연락처",
 
+    "slogan_topline"        => "턴키 프로젝트 솔루션",
+    "slogan_botline"        => "- 우리는 자산을 구축함 -",
+    "corp_code"             => " 기업 코드",
+
     // Login guest
     "login_title"           => "고객 로그인",
     "login_email_box"       => "이메일",

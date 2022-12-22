@@ -24,32 +24,9 @@
         <script src="https://demos.creative-tim.com/rubik/assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
         <script src="//hstatic.net/0/0/global/design/js/bootstrap.min.js"></script>
         <script src="//hstatic.net/0/0/global/option_selection.js" type="text/javascript"></script>
-        {{-- <script src="//hstatic.net/0/0/global/api.jquery.js" type="text/javascript"></script> --}}
-
-        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/scripts.js?v=69" type="text/javascript"></script> --}}
-        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/modernizr.custom.js?v=69" type="text/javascript"></script> --}}
-        {{-- <script src="//hstatic.net/0/0/global/design/theme-default/html5shiv.js"></script> --}}
         <script src="//hstatic.net/0/0/global/design/theme-default/jquery-migrate-1.2.0.min.js"></script>
-        {{-- <script src="//hstatic.net/0/0/global/design/theme-default/jquery.touchSwipe.min.js" type="text/javascript"></script> --}}
-        {{-- <script data-target=".product-resize" data-parent=".products-resize" data-img-box=".image-resize" src="//hstatic.net/0/0/global/design/js/fixheightproductv2.js"></script> --}}
-        {{-- <script src="//hstatic.net/0/0/global/design/js/haravan.plugin.1.0.js"></script> --}}
-
-        {{-- <script src="//hstatic.net/0/0/global/design/theme-default/jquery.flexslider.js" type="text/javascript"></script> --}}
-
-        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/classie.js?v=69" type="text/javascript"></script>
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/mlpushmenu.js?v=69" type="text/javascript"></script> --}}
-
-        {{-- <script src="//theme.hstatic.net/1000077855/1000533237/14/core.min.js?v=69" type="text/javascript"></script>
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/widget.min.js?v=69" type="text/javascript"></script>
-        <script src="//theme.hstatic.net/1000077855/1000533237/14/mouse.min.js?v=69" type="text/javascript"></script> --}}
 
         <script src="//theme.hstatic.net/1000077855/1000533237/14/slider.min.js?v=69" type="text/javascript"></script>
-       
-        {{-- <link href="//hstatic.net/0/0/global/design/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
-        <script src="//hstatic.net/0/0/global/design/plugins/fancybox/jquery.fancybox.js" type="text/javascript"></script>
-        <script src="//hstatic.net/290/1000076290/10/2016/3-17/jquery.fancybox-media.js" type="text/javascript"></script> --}}
-
-        {{-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54aa0592190a1461" async="async"></script> --}}
         <!--------------CSS----------->
         <link href="//hstatic.net/0/0/global/design/theme-default/page-contact-form.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -547,17 +524,17 @@
                 <div class="top-menu container-fluid">
                     <div class="top-left-menu">
                         <span class="slogan-topline">
-                            Turkey project solution<br/>
+                            @lang('messages.slogan_topline')<br/>
                         </span>
                         <span class="slogan-botline">
-                            - We buils assets -
+                           @lang('messages.slogan_botline')
                         </span>
                         
                     </div>
                     <div class="top-right-menu">
                         <div class="corp-code">
                             <span class="corp-text">
-                                Corp Code:<br/>
+                                @lang('messages.corp_code'):<br/>
                             </span>
                             
                             <span class="upg">UPG</span>
@@ -1286,23 +1263,23 @@
         <script>
             $( ".mobile-lang-vi" ).click(function(e) {
                 e.preventDefault();
-                $(location).attr('href','https://minhglobal.com/change-language/vi');
+                $(location).attr('href','https://ucphatglobal.com/change-language/vi');
             });
             $( ".mobile-lang-en" ).click(function(e) {
                 e.preventDefault();
-                $(location).attr('href','https://minhglobal.com/change-language/en');
+                $(location).attr('href','https://ucphatglobal.com/change-language/en');
             });
             $( ".mobile-lang-zh" ).click(function(e) {
                 e.preventDefault();
-                $(location).attr('href','https://minhglobal.com/change-language/zh');
+                $(location).attr('href','https://ucphatglobal.com/change-language/zh');
             });
             $( ".mobile-lang-ja" ).click(function(e) {
                 e.preventDefault();
-                $(location).attr('href','https://minhglobal.com/change-language/ja');
+                $(location).attr('href','https://ucphatglobal.com/change-language/ja');
             });
             $( ".mobile-lang-kr" ).click(function(e) {
                 e.preventDefault();
-                $(location).attr('href','https://minhglobal.com/change-language/kr');
+                $(location).attr('href','https://ucphatglobal.com/change-language/kr');
             });
         </script>
     </body>

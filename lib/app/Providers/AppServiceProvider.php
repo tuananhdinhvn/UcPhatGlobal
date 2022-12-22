@@ -31,11 +31,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request)
     {
+        $data['news_list']              = BlogModel::where('blog_type', 'blog')->where('blog_hienthi', true)->get();
+
         $data['count_new_order']        = OrderModel::where('od_status', 0)->count();
        
         $data['getindex']               = LayoutHomepageModel::find(1);
 
-        $data['getblog_index']          = BlogModel::all();
         $data['setting_info']           = SettingModel::all();
 
         $data['qna_list']               = QNAModel::all();

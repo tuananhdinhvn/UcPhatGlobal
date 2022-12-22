@@ -145,99 +145,6 @@ class LayoutHomepageController extends Controller
         $layout->save();       
 
 
-        // Service
-        // $service                    = LayoutServiceModel::find(1);
-
-        // $service->service_intro_vi  = $request->service_intro_vi;
-        // $service->service_intro_en  = $request->service_intro_en;
-        // $service->service_intro_zh  = $request->service_intro_zh;
-        // $service->service_intro_ja  = $request->service_intro_ja;
-
-        // $service->service_title1_vi = $request->service_title1_vi;
-        // $service->service_title1_en = $request->service_title1_en;
-        // $service->service_title1_zh = $request->service_title1_zh;
-        // $service->service_title1_ja = $request->service_title1_ja;
-
-        // $service->service_des1_vi   = $request->service_des1_vi;
-        // $service->service_des1_en   = $request->service_des1_en;
-        // $service->service_des1_zh   = $request->service_des1_zh;
-        // $service->service_des1_ja   = $request->service_des1_ja;
-
-        // if ($request->hasFile('service_background_1')) {
-        //     File::delete('public/upload/template/'.$service->service_background_1);
-
-        //     $file                           = $request->file('service_background_1');
-        //     $image_name                     = $file->getClientOriginalName();
-        //     $image_save_name                = time().$image_name;
-        //     $service->service_background_1  = $image_save_name;
-        //     $file->move('public/upload/template/', $image_save_name);
-        // }
-
-        // $service->service_title2_vi = $request->service_title2_vi;
-        // $service->service_title2_en = $request->service_title2_en;
-        // $service->service_title2_zh = $request->service_title2_zh;
-        // $service->service_title2_ja = $request->service_title2_ja;
-
-        // $service->service_des2_vi   = $request->service_des2_vi;
-        // $service->service_des2_en   = $request->service_des2_en;
-        // $service->service_des2_zh   = $request->service_des2_zh;
-        // $service->service_des2_ja   = $request->service_des2_ja;
-
-        // if ($request->hasFile('service_background_2')) {
-        //     File::delete('public/upload/template/'.$service->service_background_2);
-
-        //     $file                           = $request->file('service_background_2');
-        //     $image_name                     = $file->getClientOriginalName();
-        //     $image_save_name                = time().$image_name;
-        //     $service->service_background_2  = $image_save_name;
-        //     $file->move('public/upload/template/', $image_save_name);
-        // }
-
-        // $service->service_title3_vi = $request->service_title3_vi;
-        // $service->service_title3_en = $request->service_title3_en;
-        // $service->service_title3_zh = $request->service_title3_zh;
-        // $service->service_title3_ja = $request->service_title3_ja;
-
-        // $service->service_des3_vi   = $request->service_des3_vi;
-        // $service->service_des3_en   = $request->service_des3_en;
-        // $service->service_des3_zh   = $request->service_des3_zh;
-        // $service->service_des3_ja   = $request->service_des3_ja;
-
-        // if ($request->hasFile('service_background_3')) {
-        //     File::delete('public/upload/template/'.$service->service_background_3);
-
-        //     $file                           = $request->file('service_background_3');
-        //     $image_name                     = $file->getClientOriginalName();
-        //     $image_save_name                = time().$image_name;
-        //     $service->service_background_3  = $image_save_name;
-        //     $file->move('public/upload/template/', $image_save_name);
-        // }
-
-        // $service->service_title4_vi = $request->service_title4_vi;
-        // $service->service_title4_en = $request->service_title4_en;
-        // $service->service_title4_zh = $request->service_title4_zh;
-        // $service->service_title4_ja = $request->service_title4_ja;
-
-        // $service->service_des4_vi   = $request->service_des4_vi;
-        // $service->service_des4_en   = $request->service_des4_en;
-        // $service->service_des4_zh   = $request->service_des4_zh;
-        // $service->service_des4_ja   = $request->service_des4_ja;
-
-        // if ($request->hasFile('service_background_4')) {
-        //     File::delete('public/upload/template/'.$service->service_background_4);
-
-        //     $file                           = $request->file('service_background_4');
-        //     $image_name                     = $file->getClientOriginalName();
-        //     $image_save_name                = time().$image_name;
-        //     $service->service_background_4  = $image_save_name;
-        //     $file->move('public/upload/template/', $image_save_name);
-        // }
-
-
-        // $service->created_at        = Carbon::now();
-        // $service->updated_at        = Carbon::now();
-        // $service->save();
-
 
         return back();
         
@@ -431,10 +338,53 @@ class LayoutHomepageController extends Controller
         return view('admin/add/add_csr');
     }
 
+    public function postaddCSR(Request $request){
+
+        $tech                        = new ImageModel;
+      
+        if ($request->hasFile('img_src')) {
+            $file                   = $request->file('img_src');
+            $image_name             = $file->getClientOriginalName();
+            $image_save_name        = time().$image_name;
+            $tech->img_src   = $image_save_name;
+            $file->move('public/upload/info/', $image_save_name);
+        }
+
+        $tech->img_type      = 'certificate';
+
+        $tech->created_at    = Carbon::now();
+        $tech->updated_at    = Carbon::now();
+        $tech->save();     
+
+        return redirect()->intended('admin/whyus');
+    }
+
     public function editCSR($id){
         $data['cert_item']      = ImageModel::find($id);
+
         return view('admin/edit/edit_csr', $data);
     }
+
+    public function posteditCSR(Request $request, $id){
+
+        $carti_item                 = ImageModel::find($id);
+      
+        if ($request->hasFile('img_src')) {
+            File::delete('public/upload/info/'.$carti_item->img_src);
+
+            $file                   = $request->file('img_src');
+            $image_name             = $file->getClientOriginalName();
+            $image_save_name        = time().$image_name;
+            $carti_item->img_src    = $image_save_name;
+            $file->move('public/upload/info/', $image_save_name);
+        }
+
+        $carti_item->updated_at    = Carbon::now();
+        $carti_item->save();     
+
+        return redirect()->intended('admin/whyus');
+    }
+
 
 	public function addSocialSlide(){
         return view('admin/add/add_social_slide');
@@ -692,7 +642,7 @@ class LayoutHomepageController extends Controller
 
         $img->save();
 
-        return redirect('admin/template/service');
+        return redirect('admin/service');
     }
 
 
@@ -723,7 +673,7 @@ class LayoutHomepageController extends Controller
 
         $img->save();
 
-        return redirect('admin/template/service');
+        return redirect('admin/service');
     }
 
 

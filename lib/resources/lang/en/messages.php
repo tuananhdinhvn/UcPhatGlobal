@@ -18,6 +18,10 @@ return [
     "menu_achievements"     => "ACHIEVEMENTS",
     "menu_contact_us"       => "Contact us",
 
+    "slogan_topline"        => "Turnkey Project Solution",
+    "slogan_botline"        => "- We Build Assets -",
+    "corp_code"             => "Corp Code",
+
     // Login guest
     "login_title"           => "Guest login",
     "login_email_box"       => "Email",

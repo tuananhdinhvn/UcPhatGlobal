@@ -10,11 +10,17 @@ Route::group(['namespace' => 'FrontEnd', 'middleware' => 'locale'], function () 
 
     // Index
     Route::group(['prefix' => '/'], function () {
-        Route::get('/', 'IndexController@getIndex')->name('index');
+        Route::get('/', 'IndexController@updating')->name('updating');
+
+        Route::get('/index.html', 'IndexController@getTest')->name('index');
+
+        Route::get('/news/{id}', 'IndexController@getNews')->name('news');
+
+        // Route::get('/', 'IndexController@getIndex')->name('index');
     });
 
     Route::group(['prefix' => 'project'], function () {
-        Route::get('/', 'IndexController@getProject')->name('project');
+        Route::get('/', 'IndexController@getProject')->name('index.project');
         Route::get('{id}', 'IndexController@getProjectDetail');
     });
 
@@ -36,11 +42,6 @@ Route::group(['namespace' => 'FrontEnd', 'middleware' => 'locale'], function () 
         Route::post('customer-contact', 'TemplateController@saveCustomerInfo');
     });
     
-    // Danh mục Blog
-    Route::get('{slug}.{id}', 'BlogController@getBlogCategory');
-    
-    //Bài viết chi tiết
-    Route::get('{slug}/{slug_detail}.{id}', 'BlogController@getBlogDetail');
 
     // filter
     Route::get('project-filter', 'ProductController@filterProject');
@@ -50,30 +51,6 @@ Route::group(['namespace' => 'FrontEnd', 'middleware' => 'locale'], function () 
 
    
 
-
-    // Đăng ký thành viên
-    Route::group(['prefix' => 'register'], function () {
-        // Route::get('/', 'RegisterController@getRegister');
-        // Route::post('/', 'RegisterController@postRegister');
-
-        Route::get('confirm/{code}', 'RegisterController@confirmUser');
-    });
-
-    // Đăng nhập
-    Route::group(['prefix' => 'login'], function () {
-        Route::get('/', 'LoginController@getLogin');
-        Route::post('/', 'LoginController@postLogin');
-    });
-
-    // // Lấy lại mật khẩu
-    // Route::get('forgot-password', 'LoginController@forgotPassword');
-    // Route::get('change-password/{code}', 'LoginController@rebornPassword');
-    // Route::post('change-password/{code}', 'LoginController@postrebornPassword');
-
-    // // Thông tin người dùng
-    // Route::get('account', 'AccountUserController@getAccount')->middleware('AssetAccount');
-    
-    // Route::get('logout', 'LogoutController@logout');
 });
 
 
@@ -131,6 +108,53 @@ Route::group(['namespace' => 'admin'], function () {
         });
 
 
+        //Why us admin UPG
+        Route::group(['prefix' => 'whyus'], function () {
+            //Achievement
+            Route::get('/', 'WhyUsController@showWhyus')->middleware('CheckLogout')->name('admin.whyus');
+            Route::post('/', 'WhyUsController@postWhyUs')->middleware('CheckLogout');
+
+            Route::get('achievement/add', 'WhyUsController@getaddAchievement')->middleware('CheckLogout')->name('admin.whyus.add_achievement');
+            Route::post('achievement/add', 'WhyUsController@postaddAchievement')->middleware('CheckLogout');
+
+            Route::get('achievement/edit/{id}', 'WhyUsController@geteditAchievement')->middleware('CheckLogout')->name('admin.whyus.edit_achievement');
+            Route::post('achievement/edit/{id}', 'WhyUsController@posteditAchievement')->middleware('CheckLogout');
+
+            Route::get('achievement/delete/{id}', 'WhyUsController@deleteAchievement')->middleware('CheckLogout')->name('admin.whyus.delete_achievement');
+            
+
+            //Technology
+            Route::get('technology/add', 'WhyUsController@getaddTechnology')->middleware('CheckLogout')->name('admin.whyus.add_technology');
+            Route::post('technology/add', 'WhyUsController@postaddTechnology')->middleware('CheckLogout');
+
+            Route::get('technology/edit/{id}', 'WhyUsController@geteditTechnology')->middleware('CheckLogout')->name('admin.whyus.edit_technology');
+            Route::post('technology/edit/{id}', 'WhyUsController@posteditTechnology')->middleware('CheckLogout');
+
+            Route::get('technology/delete/{id}', 'WhyUsController@deleteTechnology')->middleware('CheckLogout');
+
+            // Certificate
+            Route::get('certificate/delete/{id}', 'WhyUsController@deleteCertificate')->middleware('CheckLogout')->name('admin.whyus.delete_achievement');
+
+            // Customer
+            Route::get('customer/add', 'WhyUsController@getaddCustomer')->middleware('CheckLogout')->name('admin.whyus.add_customer');
+            Route::post('customer/add', 'WhyUsController@postaddCustomer')->middleware('CheckLogout');
+
+            Route::get('customer/delete/{id}', 'WhyUsController@deleteCustomer')->middleware('CheckLogout')->name('admin.whyus.delete_customer');
+
+        });
+
+
+        //Service admin UPG
+        Route::group(['prefix' => 'service'], function () {
+            //Achievement
+            Route::get('/', 'ServiceController@showService')->middleware('CheckLogout')->name('admin.service');
+            Route::post('/', 'ServiceController@postshowService')->middleware('CheckLogout');
+
+            Route::get('delete-slide-service/{id}', "ServiceController@deletServiceSlide")->middleware('CheckLogout');
+
+        });
+
+
         //Blog Category
         Route::group(['prefix' => 'blogcat'], function () {
             Route::get('/', 'BlogCategoryController@getBlogCat')->middleware('CheckLogout');
@@ -162,6 +186,10 @@ Route::group(['namespace' => 'admin'], function () {
 
         // Project admin
         Route::group(['prefix' => 'project'], function () {
+            Route::get('intro', 'ProjectController@getIntroProject')->middleware('CheckLogout')->name('admin.project.intro');
+            Route::post('intro', 'ProjectController@postIntroProject');
+
+
             Route::get('/', 'ProjectController@getProject')->name('admin.project')->middleware('CheckLogout');
             
             Route::get('add', 'ProjectController@addProject')->middleware('CheckLogout')->name('admin.project.add');
@@ -233,8 +261,8 @@ Route::group(['namespace' => 'admin'], function () {
                 Route::get('whyus/process/delete/{id}', 'LayoutHomepageController@deleteProcess')->middleware('CheckLogout');
                 
 
-                Route::get('whyus', 'LayoutHomepageController@getWhyUs')->middleware('CheckLogout')->name('admin.template.whyus');
-                Route::post('whyus', 'LayoutHomepageController@postWhyUs')->middleware('CheckLogout');
+                // Route::get('whyus', 'LayoutHomepageController@getWhyUs')->middleware('CheckLogout')->name('admin.template.whyus');
+                // Route::post('whyus', 'LayoutHomepageController@postWhyUs')->middleware('CheckLogout');
                 Route::get('whyus/delete/{id}', 'LayoutHomepageController@getdeleteImage')->middleware('CheckLogout');
 
 				// Why us - technology
@@ -293,8 +321,10 @@ Route::group(['namespace' => 'admin'], function () {
 				
 				//------ Cert & CSR -------//
                 Route::get('csr/add', 'LayoutHomepageController@addCSR')->middleware('CheckLogout');
+                Route::post('csr/add', 'LayoutHomepageController@postaddCSR')->middleware('CheckLogout');
                 
                 Route::get('csr/edit/{id}', 'LayoutHomepageController@editCSR')->middleware('CheckLogout')->name('admin.template.csr.edit');
+                Route::post('csr/edit/{id}', 'LayoutHomepageController@posteditCSR')->middleware('CheckLogout');
               
 				Route::get('social/add', 'LayoutHomepageController@addSocialSlide')->middleware('CheckLogout');
             });

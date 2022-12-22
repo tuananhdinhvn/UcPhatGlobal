@@ -60,7 +60,7 @@
 
                         <div class=" pull-right">
                             <input style="width:100px;" type="submit" class="btn btn-primary" value="Thêm">
-                            <a href="{{ asset('admin/template/social') }}">
+                            <a href="{{ asset('admin/whyus') }}">
                                 <input style="width:100px;" type="button" class="btn btn-danger" value="Hủy">
                             </a>
                         </div>

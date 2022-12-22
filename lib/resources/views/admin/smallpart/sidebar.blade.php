@@ -17,13 +17,33 @@
                 </li>
             @endif
 
-            {{-- <li>
+            <li>
                 <a href="{{ asset('admin/news?type=blog') }}" @if ($active_sidebar_admin[1]=='news') class="active" @endif>
                     <i class="fa fa-book"></i>
                     <span>Tin tức</span>
                 </a>
-            </li> --}}
+            </li>
 
+            <li>
+                <a @if ($active_sidebar_admin[1]=='timeline') class="active" @endif href="{{ route('admin.timeline') }}">
+                    <i class="fa fa-comments"></i>
+                    <span>Timeline </span>
+                </a>
+            </li>
+
+            <li>
+                <a @if ($active_sidebar_admin[1]=='whyus') class="active" @endif href="{{ route('admin.whyus') }}">
+                    <i class="fa fa-check"></i>
+                    <span>Why us </span>
+                </a>
+            </li>
+
+            <li>
+                <a @if ($active_sidebar_admin[1]=='service') class="active" @endif href="{{ route('admin.service') }}">
+                    <i class="fa fa-list"></i>
+                    <span>Service </span>
+                </a>
+            </li>
 
             <li class="sub-menu">
                 <a href="javascript:;" @if ($active_sidebar_admin[1]=='project') class="active" @endif>
@@ -31,6 +51,7 @@
                     <span>Project</span>
                 </a>
                 <ul class="sub">
+                    <li><a href="{{ route('admin.project.intro') }}">Intro</a></li>
                     <li><a href="{{ route('admin.project.location') }}">Location</a></li>
                     <li><a href="{{ route('admin.project.major') }}">Ngành nghề</a></li>
                     <li><a href="{{ route('admin.project') }}">Danh sách dự án</a></li>
@@ -39,12 +60,7 @@
 
 
             
-            <li>
-                <a @if ($active_sidebar_admin[1]=='timeline') class="active" @endif href="{{ route('admin.timeline') }}">
-                    <i class="fa fa-comments"></i>
-                    <span>Timeline </span>
-                </a>
-            </li>
+            
 
 
 

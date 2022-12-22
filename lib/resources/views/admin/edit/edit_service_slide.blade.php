@@ -95,7 +95,7 @@
 
                         <div class=" pull-right">
                             <input style="width:100px;" type="submit" class="btn btn-primary" value="Cập nhật">
-                            <a href="{{ asset('admin/template/service') }}">
+                            <a href="{{ asset('admin/service') }}">
                                 <input style="width:100px;" type="button" class="btn btn-danger" value="Hủy">
                             </a>
                         </div>

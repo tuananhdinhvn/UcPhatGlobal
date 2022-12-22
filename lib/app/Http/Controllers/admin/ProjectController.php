@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\model\ProductCategoryModel;
+use App\model\LayoutHomepageModel;
 
 use App\model\ProductLocationModel;
 use App\model\CustomerModel;
@@ -21,6 +22,28 @@ use App\model\NationModel;
 
 class ProjectController extends Controller
 {
+    // ----------------------Project Intro----------------------
+    public function getIntroProject(){
+        $data['project_intro']      = LayoutHomepageModel::find(1);
+
+        return view('admin.display.intro_project', $data);
+    }
+
+    public function postIntroProject(Request $request){
+        $project_intro                     = LayoutHomepageModel::find(1);
+
+        $project_intro->project_intro_vi   = $request->project_intro_vi;
+        $project_intro->project_intro_en   = $request->project_intro_en;
+        $project_intro->project_intro_zh   = $request->project_intro_zh;
+        $project_intro->project_intro_ja   = $request->project_intro_ja;
+        $project_intro->project_intro_kr   = $request->project_intro_kr;
+
+        $project_intro->updated_at         = Carbon::now();
+        $project_intro->save();
+
+        return back();
+        
+    }
 
     // ----------------------Project List-----------------------
     public function getProject(Request $request){
@@ -32,7 +55,6 @@ class ProjectController extends Controller
         return view('admin/display/project', $data);
     }
 
-
     public function addProject(Request $request){
         $data['pro_type']           = $request->type;
         $data['nation_list']        = NationModel::orderBy('nation_name_en', 'asc')->get();
@@ -41,7 +63,6 @@ class ProjectController extends Controller
         
         return view('admin/add/addproject', $data);
     }
-
 
     public function postaddProject(Request $request){
 
@@ -183,7 +204,6 @@ class ProjectController extends Controller
         return redirect()->intended('admin/project');
     }
 
-
     public function getProjectDetail($id){
         $data['project_detail']     = ProductModel::find($id);
         $data['nation_list']        = NationModel::orderBy('nation_name_en', 'asc')->get();
@@ -194,7 +214,6 @@ class ProjectController extends Controller
 
         return view('admin/edit/editproject', $data);
     }
-
 
     public function postProjectDetail(Request $request, $id){
         $first_location = ProductLocationModel::first();
@@ -358,7 +377,6 @@ class ProjectController extends Controller
         return redirect()->intended('admin/project');
     }
 
-
     public function checkshowProgress($id){
         $product                                = ProductModel::find($id);
         $product->pro_progress_video_private    = $product->pro_progress_video_private ? 0 : 1;
@@ -441,13 +459,11 @@ class ProjectController extends Controller
         return redirect()->intended('admin/project/location');
     }
 
-
     public function editProjectLocation($id){
         $data['edit_location']    = ProductLocationModel::find($id);
 
         return view('admin/edit/editLocation', $data);
     }
-
 
     public function posteditProjectLocation(Request $request, $id){
         $location                   = ProductLocationModel::find($id);
@@ -467,8 +483,6 @@ class ProjectController extends Controller
         ProductLocationModel::destroy($id);
         return back();
     }
-
-
     // ----------------------End Project location--------------------
 
 
@@ -480,7 +494,6 @@ class ProjectController extends Controller
         
         return view('admin/display/major', $data);
     }
-
    
     public function addProjectMajor(){
         return view('admin/add/addMajor');
@@ -501,7 +514,6 @@ class ProjectController extends Controller
 
         return redirect()->intended('admin/project/major');
     }
-
 
     public function editProjectMajor($id){
         $data['edit_major']         = MajorModel::find($id);
@@ -537,7 +549,6 @@ class ProjectController extends Controller
         MajorModel::destroy($id);
         return back();
     }
-
     // ----------------------End Project Major--------------------
 
 

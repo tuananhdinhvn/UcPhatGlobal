@@ -80,7 +80,7 @@
                                 <th class="hidden-phone"><i class="fa fa-picture-o"></i> Hình đại diện</th>
                                 
 								<th style="text-align:center"><i class=" fa fa-dot-circle-o"></i> Hiển thị</th>
-                                <th><i class=" fa fa-edit"></i> Tùy chỉnh</th>
+                                <th style="text-align: center"><i class=" fa fa-edit"></i> Tùy chỉnh</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -109,14 +109,7 @@
                                             
                                         </a>
                                     </td>
-                                    <td>
-                                        <a  rel="id"
-                                            proname="name"
-                                            href="javascript:"
-                                            title="Xem nhanh sản phẩm"
-                                            class="btn btn-default btn-xs quickshow-id">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
+                                    <td style="text-align: center;">
 
                                         
 

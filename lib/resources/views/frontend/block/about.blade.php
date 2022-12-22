@@ -104,26 +104,26 @@
                 <section class="tab-1-why-us">
                     <h2>@lang('messages.whyus_head_achievement')</h2>
                     <div class="grid-number-container">
-                        @foreach ($numbers_icon as $item)
+                        @foreach ($achievement_list as $achievement_item)
                         <div class="number-item">
-                            <img class="achievement-img" src="{{ asset('public/upload/image/'.$item->img_src) }}" alt="">
-                            <h3 class="achievement-number">{{ $item->img_number }}</h3>
+                            <img class="achievement-img" src="{{ asset('public/upload/info/'.$achievement_item->img_src) }}" alt="">
+                            <h3 class="achievement-number">{{ $achievement_item->img_number }}</h3>
                             <p class="achievement-des">
                                 @switch( Config::get('app.locale') )
                                     @case('vi')
-                                        {{ $item->img_description_vi }}
+                                        {{ $achievement_item->img_description_vi }}
                                         @break
                                     @case('en')
-                                        {{ $item->img_description_en }}
+                                        {{ $achievement_item->img_description_en }}
                                         @break
                                     @case('zh')
-                                        {{ $item->img_description_zh }}
+                                        {{ $achievement_item->img_description_zh }}
                                         @break
                                     @case('ja')
-                                        {{ $item->img_description_ja }}
+                                        {{ $achievement_item->img_description_ja }}
                                         @break
                                     @case('kr')
-                                        {{ $item->img_description_kr }}
+                                        {{ $achievement_item->img_description_kr }}
                                         @break
                                 @endswitch
                             </p>

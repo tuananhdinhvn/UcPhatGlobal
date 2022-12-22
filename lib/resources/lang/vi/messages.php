@@ -18,6 +18,10 @@ return [
     "menu_achievements"     => "Chứng nhận",
     "menu_contact_us"       => "Liên hệ",
 
+    "slogan_topline"        => "Giải pháp dự án chìa khóa trao tay",
+    "slogan_botline"        => "- Xây dựng tài sản -",
+    "corp_code"             => "Mã công ty",
+
     // Login guest
     "login_title"           => "Đăng nhập tài khoản",
     "login_email_box"       => "Email",

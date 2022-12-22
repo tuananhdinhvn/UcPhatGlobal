@@ -18,6 +18,10 @@ return [
     "menu_achievements"     => "実績",
     "menu_contact_us"       => "連絡先",
 
+    "slogan_topline"        => "ターンキー プロジェクト ソリューション",
+    "slogan_botline"        => "- 私たちは資産を構築します -",
+    "corp_code"             => "法人コード",
+
     // Login guest
     "login_title"           => "ゲストログイン",
     "login_email_box"       => "Eメール",

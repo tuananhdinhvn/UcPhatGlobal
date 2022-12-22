@@ -18,6 +18,10 @@ return [
     "menu_achievements"     => "成 就 成 就",
     "menu_contact_us"       => "联系我们",
 
+    "slogan_topline"        => "交钥匙工程解决方案",
+    "slogan_botline"        => "- 我们监理资产 -",
+    "corp_code"             => "公司代码",
+
     // Login guest
     "login_title"           => "訪客登錄",
     "login_email_box"       => "邮箱地址",

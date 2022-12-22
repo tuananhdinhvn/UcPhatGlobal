@@ -28,7 +28,7 @@
                         <thead>
                             <tr>
                                 <th class="col-md-4"><i class="fa fa-pencil-square-o"></i> Tên bài viết </th>
-                                <th class="col-md-3" style="text-align: center;"><i class="fa fa-check"></i> Hiển thị trang chủ</th>
+                                <th class="col-md-3" style="text-align: center;"><i class="fa fa-check"></i> Hiển thị</th>
                                 {{-- <th class="col-md-2" ><i class="fa fa-list"></i> Danh mục</th> --}}
                                 <th class="col-md-2 hidden-phone"><i class=" fa fa-user"></i> Tác giả</th>
                                 <th class="col-md-2 hidden-phone"><i class=" fa fa-user"></i> Cập nhật lần cuối</th>
