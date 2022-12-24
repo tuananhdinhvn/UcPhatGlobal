@@ -59,9 +59,13 @@
 
             @include('frontend.section.whyus')
 
-            @include('frontend.section.service')
+            @include('frontend.section.service-test')
+
+            {{-- @include('frontend.section.service') --}}
             
-            @include('frontend.section.project')
+            @include('frontend.section.project-test')
+
+            {{-- @include('frontend.section.project') --}}
 
             @include('frontend.section.contact')
 

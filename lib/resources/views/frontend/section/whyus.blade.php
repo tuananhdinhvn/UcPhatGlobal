@@ -39,14 +39,29 @@
                     </div>
                     @endforeach
 
-
-                  
-
-
-
                 </div>
 
                 <style>
+                    .timeline-img-cover{
+                        position: fixed;
+                        bottom: 20px;
+                    }
+                    .achievement-horizone-line{
+                        width: 100%;
+                        height: 35px;
+                        background: #244d86;
+                    }
+                    .achievement-horizone-line img{
+                        padding-top: 50px;
+                    }
+                </style>
+
+                <div class="timeline-img-cover">
+                    <div class="achievement-horizone-line"></div>
+                    <img src="https://minhglobal.com/public/upload/template/1670904893221213_TIMELINE 1.png" alt="">
+                </div>
+
+                {{-- <style>
                     .timeline-blur-item{
                         background: #0000006b;
                         width: 100%;
@@ -115,7 +130,7 @@
                         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
                         </button>
                     </div>
-                </section>
+                </section> --}}
             </div>
         </div>
         

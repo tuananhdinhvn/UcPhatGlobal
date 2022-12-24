@@ -54,16 +54,11 @@
             $(".main-menu-item").first().addClass("active-bot-menu");
         });
 
-
-
-
     });
-
-
-    
-
-    
 </script>
+
+
+
 
 <script>
     $(document).ready(function () {
@@ -306,6 +301,57 @@
     },
     });
 </script>
+
+
+<!-- Service main Swiper -->
+<script>
+    var swiper = new Swiper(".main-serice-slide", {
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: ".main-serice-slide-pagination",
+        clickable: true,
+    },
+    });
+</script>
+
+
+<!-- Service Swiper -->
+<script>
+    var swiper = new Swiper(".design-zone-bot-slide", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    slidesPerGroup: 1,
+    autoplay: true,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+        el: ".service-item-swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".service-item-swiper-button-next",
+        prevEl: ".service-item-swiper-button-prev",
+    },
+    });
+</script>
+{{-- <script>
+    
+    var swiper = new Swiper(".design-zone-bot-slide", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    });
+</script> --}}
+
+
+
+
 
 <!-- timeline -->
 <script>
