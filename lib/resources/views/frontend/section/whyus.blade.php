@@ -12,7 +12,6 @@
             <div class="achievements-cover">
                 <div class="achievements">
 
-
                     @foreach ($achievement_list as $achievement_item)
                     <div class="achievement-item">
                         <img src="{{ asset('public/upload/info/'.$achievement_item->img_src) }}"/>
@@ -210,7 +209,7 @@
             <div class="customer-cover">
                 @foreach ($customer_list as $item)
                     <div class="customer-item">
-                        <img src="{{ asset('public/upload/image/'.$item->img_src) }}"" class="customer-img"/>
+                        <img src="{{ asset('public/upload/info/'.$item->img_src) }}"" class="customer-img"/>
                     </div>
                 @endforeach
             </div>

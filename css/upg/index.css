@@ -10,7 +10,7 @@
 .top-menu .menu-top-left{
     width: 50%;
     float: left;
-    padding-top: 10px;
+    padding-top: 2px;
     text-align: center;
 }
 .top-menu .menu-top-left .slogan-top-line{
@@ -31,12 +31,15 @@
 .top-menu .menu-top-right{
     width: 50%;
     float: right;
-    padding-top: 10px;
+    padding-top: 2px;
 }
 .top-menu .menu-top-right .corp-code{
     width: 35%;
     float: left;
     text-align: center;
+    position: relative;
+    right: -15%;
+    z-index: 100;
 }
 .top-menu .menu-top-right .corp-code .corp{
     font-size: 1.2rem;

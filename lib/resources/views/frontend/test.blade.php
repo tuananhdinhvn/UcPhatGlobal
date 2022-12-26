@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -98,7 +97,6 @@
                         timer: 3500
                     });
                 });
-
             @elseif(Config::get('app.locale') == 'vi')
                 $(document).ready(function(){
                     Swal.fire({
@@ -109,7 +107,6 @@
                         timer: 3500
                     });
                 });
-
             @elseif(Config::get('app.locale') == 'zh')
                 $(document).ready(function(){
                     Swal.fire({
@@ -120,7 +117,6 @@
                         timer: 3500
                     });
                 });
-
             @elseif(Config::get('app.locale') == 'ja')
                 $(document).ready(function(){
                     Swal.fire({
@@ -131,7 +127,6 @@
                         timer: 3500
                     });
                 });
-
             @elseif(Config::get('app.locale') == 'kr')
                 $(document).ready(function(){
                     Swal.fire({
@@ -143,7 +138,6 @@
                     });
                 });
             @endif
-
         @endif
     </script>
 

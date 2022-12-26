@@ -134,6 +134,27 @@
 </script>
 
 
+<!--News list index fixed-->
+<script>
+    var swiper = new Swiper(".news-zone-index", {
+    direction: "vertical",
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: true,
+    loop: true,
+    mousewheel: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    });
+
+    
+</script>
+
+
+
+
 <!-- News Swiper -->
 <script>
     var swiper = new Swiper(".newsSwiper", {

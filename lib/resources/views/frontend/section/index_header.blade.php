@@ -29,41 +29,76 @@
                 </span>
             </div>
             <div class="news-list">
-                <span class="news-title">
-                    On The News:<br/>
-                </span>
-
-
-                <div id="news-highlight" class="swiper newsSwiper">
-                    <div id="news-swiper-inside" class="swiper-wrapper">
-                        @foreach ($news_list as $news_item)
-                            <div class="news-item swiper-slide">
-                                <a class="news-link" href="{{ asset('news/'.$news_item->blog_id) }}">
-                                @switch( Config::get('app.locale') )
-                                    @case('vi')
-                                        {{ str_limit($news_item->blog_ten_vi, 50) }}
-                                        @break
-                                    @case('en')
-                                        {{ str_limit($news_item->blog_ten_en, 50) }}
-                                        @break
-                                    @case('zh')
-                                        {{ str_limit($news_item->blog_ten_zh, 50) }}
-                                        @break
-                                    @case('ja')
-                                        {{ str_limit($news_item->blog_ten_ja, 50) }}
-                                        @break
-                                    @case('kr')
-                                        {{ str_limit($news_item->blog_ten_kr, 50) }}
-                                        @break
-                                @endswitch  
-                                </a> 
-                            </div>
-                            
-                        @endforeach
-
-                    </div>
-                    <div id="news-swiper-dot" class="swiper-pagination" style="opacity: 0;"></div>
+                
+                <style>
+                    .news-zone-tiltle{
+                        font-size: 18px;
+                        text-transform: capitalize;
+                        font-weight: bold;
+                        font-family: 'Nunito', sans-serif;
+                        color: #bd7e2a;
+                        font-style: italic;
+                        letter-spacing: 1px;
+                    }
+                    .news-zone-list{
+                        height: 6vh;
+                        padding: 5px 0;
+                    }
+                    .news-item-index{
+                        height: 3vh;
+                        color: rgb(90, 90, 90);
+                        font-family: 'Oswald', sans-serif;
+                        font-style: italic;
+                        color: #9b9898;
+                        font-size: 15px;
+                        text-decoration: none;
+                        width: 100%;
+                    }
+                    .news-item-index:hover{
+                        color: #000;
+                        text-decoration: none;
+                    }
+                </style>
+                <div class="news-zone-tiltle">
+                    On The News
                 </div>
+
+                <div class="news-zone-list swiper news-zone-index">
+                    <div class="swiper-wrapper">
+
+
+                        @foreach ($news_list->chunk(2) as $two)
+                        <div class="swiper-slide news-fix-css" style="">
+                            <p>
+                                @foreach($two as $news_item)
+                                <a class="news-item-index" href="{{ asset('news/'.$news_item->blog_id) }}">
+                                    @switch( Config::get('app.locale') )
+                                        @case('vi')
+                                            {{ str_limit($news_item->blog_ten_vi, 50) }}
+                                            @break
+                                        @case('en')
+                                            {{ str_limit($news_item->blog_ten_en, 50) }}
+                                            @break
+                                        @case('zh')
+                                            {{ str_limit($news_item->blog_ten_zh, 50) }}
+                                            @break
+                                        @case('ja')
+                                            {{ str_limit($news_item->blog_ten_ja, 50) }}
+                                            @break
+                                        @case('kr')
+                                            {{ str_limit($news_item->blog_ten_kr, 50) }}
+                                            @break
+                                    @endswitch  
+                                </a><br/>
+                                @endforeach
+
+                            </p>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination" style="display: none;"></div>
+                </div>
+                
 
 
             </div>

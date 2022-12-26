@@ -434,7 +434,7 @@
                                                     <td>
                                                         <div>
                                                             <a href="">
-                                                                <img src="{{ asset('public/upload/image/'.$partner_item->img_src) }}" width="150px" style="margin-bottom: 10px"/>
+                                                                <img src="{{ asset('public/upload/info/'.$partner_item->img_src) }}" width="150px" style="margin-bottom: 10px"/>
                                                             </a>
                                                             <br/>
                                                         </div>

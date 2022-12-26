@@ -30,7 +30,6 @@
         padding-top: 20px;
     }
     .feature-line span{
-
     }
     .feature-line .feature{
         

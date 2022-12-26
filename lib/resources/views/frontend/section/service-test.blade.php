@@ -101,7 +101,6 @@
             font-family: 'Alexandria', sans-serif;
             padding-top: 10px;
         }
-
         .design-bot-zone .design-slide-item{
             background: transparent;
         }
@@ -126,7 +125,6 @@
         .service-main-slide{
             height: 100% !important;
         }
-
         .main-serice-slide-pagination{
             position: fixed;
             top: 35px;
@@ -275,7 +273,7 @@
                 <div class="service-zone">
                     <div class="design-top-zone">
                         <div class="right-zone">
-                            <div class="left-zone-bg"></div>
+                            <div class="left-zone-bg" style="background: #c39a66;"></div>
                             <div class="management-img-info">
                                 <img src="{{ asset('public/upload/service/'.$service_index->service_img_info_2) }}"/>
                             </div>
@@ -404,7 +402,7 @@
                             @endswitch  
                         </div>
                         <div class="right-zone">
-                            <div class="right-zone-bg"></div>
+                            <div class="right-zone-bg" ></div>
                             <div class="design-img-info">
                                 <img src="{{ asset('public/upload/service/'.$service_index->service_img_info_3) }}"/>
                             </div>
@@ -491,7 +489,7 @@
                 <div class="service-zone">
                     <div class="design-top-zone">
                         <div class="right-zone">
-                            <div class="left-zone-bg"></div>
+                            <div class="left-zone-bg" style="background: #fbda8d;"></div>
                             <div class="management-img-info">
                                 <img src="{{ asset('public/upload/service/'.$service_index->service_img_info_4) }}"/>
                             </div>
@@ -650,14 +648,6 @@
 
 
 
-
-
-
-
-
-
-
-
     {{-- <style>
         .service-main-swiper-pagination{
             background: #fff0;
@@ -673,7 +663,6 @@
         }
     </style>
     
-
     <div class="swiper service-main-slide">
         <div class="swiper-wrapper">
             <div class="swiper-slide" 
