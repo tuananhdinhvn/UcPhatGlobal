@@ -61,76 +61,6 @@
                     <img src="{{ asset('public/upload/template/'.$timeline_img->whyus_timeline_pc) }}" alt="">
                 </div>
 
-                {{-- <style>
-                    .timeline-blur-item{
-                        background: #0000006b;
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        z-index: -1;
-                    }
-                    .timeline-item{
-                        background-size: cover !important;
-                        background-repeat: no-repeat !important;
-                        background-position-x: 50% !important;
-                        height: 20vh !important;
-                    }
-                    .timeline-item time{
-                        color: #ddd;
-                        text-shadow: 0 0 10px black;
-                    }
-                    .timeline-item p{
-                        color: #fff;
-                        text-shadow: 0 0 15px black;
-                        text-align: center;
-                        font-weight: 500; 
-                    }
-                </style>
-                <section class="timeline">
-                    <ol>
-                        @foreach ($timeline_index as $timeline_item)
-                        <li>
-                            <div class="timeline-item" style="background-image: url({{ asset('public/upload/timeline/'.$timeline_item->event_img) }});">
-                                <section class="timeline-blur-item"></section>
-                                <time>{{ \Carbon\Carbon::parse($timeline_item->event_date)->format('Y')}}</time> 
-                                <p>
-                                    @switch( Config::get('app.locale') )
-                                        @case('vi')
-                                            {{ $timeline_item->event_title_vi }}
-                                            @break
-                                        @case('en')
-                                            {{ $timeline_item->event_title_en }}
-                                            @break
-                                        @case('zh')
-                                            {{ $timeline_item->event_title_zh }}
-                                            @break
-                                        @case('ja')
-                                            {{ $timeline_item->event_title_ja }}
-                                            @break
-                                        @case('kr')
-                                            {{ $timeline_item->event_title_kr }}
-                                            @break
-                                    @endswitch
-                                </p>
-                                 
-                            </div>
-                        </li>
-                        @endforeach
-                        <li></li>
-                    </ol>
-
-                    
-                    <div class="arrows">
-                        <button class="arrow arrow__prev disabled" disabled>
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
-                        </button>
-                        <button class="arrow arrow__next">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
-                        </button>
-                    </div>
-                </section> --}}
             </div>
         </div>
         
@@ -276,16 +206,6 @@
                 </div>
 
 
-
-                {{-- @foreach ($customer_list->chunk(18) as $cust_screen)
-                    @foreach ($cust_screen as $item)
-                        <div class="customer-item">
-                            <img src="{{ asset('public/upload/info/'.$item->img_src) }}"" class="customer-img"/>
-                        </div>
-                    @endforeach
-                    https://minhglobal.com/public/upload/image/1670988082ICCI.png
-                    https://minhglobal.com/public/upload/image/1670988062GOLDEN%20BASE%201.png
-                @endforeach --}}
             </div>
         </div>
         

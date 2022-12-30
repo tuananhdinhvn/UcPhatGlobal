@@ -42,39 +42,27 @@
 
         <link rel="stylesheet" href="{{ asset('css/upg/index.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('css/upg/responsive.css') }}">
+
     
     </head>
 
   <body>
 
     @include('frontend.section.index_header')
+    
+    @include('frontend.mobile_section.index_header_mobile')
  
+    @include('frontend.section.pc_index')
+
+    @include('frontend.mobile_section.mobile_index')
+
     <!-- Swiper -->
-    <div id="base-swiper" class="swiper mySwiper">
-        
-        <div id="base-swiper-inside" class="swiper-wrapper">
-            
-            @include('frontend.section.video')
-
-            @include('frontend.section.whyus')
-
-            @include('frontend.section.service-test')
-
-            {{-- @include('frontend.section.service') --}}
-            
-            @include('frontend.section.project-test')
-
-            {{-- @include('frontend.section.project') --}}
-
-            @include('frontend.section.contact')
-
-        </div>
-
-        <div id="main-swiper-dot" class="swiper-pagination" style="opacity: 0;"></div>
-
-    </div>
+    
 
     @include('frontend.section.script')
+
+    @include('frontend.mobile_section.script_mobile')
 
     <!-- Sweet alert -->
     <script src="{{ asset('public/admin/js/sweetalert2.all.min.js') }}"></script>
