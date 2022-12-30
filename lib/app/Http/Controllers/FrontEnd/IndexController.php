@@ -46,8 +46,8 @@ class IndexController extends Controller
 
         // Why us
         $data['achievement_list']       = ImageModel::where('img_type', 'achievement')->get();
-
-        // Why us
+        $data['timeline_img']           = LayoutHomepageModel::find(1);
+        
         $data['certificate_list']       = ImageModel::where('img_type', 'certificate')->get();
 
 
@@ -55,7 +55,7 @@ class IndexController extends Controller
         $data['whyus_company_timeline'] = LayoutHomepageModel::find(1);
         $data['technology_item']        = LayoutHomepageModel::find(1);
         $data['technology_slide_item']  = ImageModel::where('img_type', 'technology')->get();
-        $data['customer_list']          = ImageModel::where('img_type', 'customer-partner')->get();
+        $data['customer_list']          = ImageModel::where('img_type', 'customer-partner')->orderBy('img_number', 'asc')->get();
         $data['company_member_list']    = ImageModel::where('img_type', 'company-member')->get();
         $data['social_certificate']     = ImageModel::where('img_type', 'cert-img')->get();
 

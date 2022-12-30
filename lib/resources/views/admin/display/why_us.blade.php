@@ -68,7 +68,34 @@
 
                         <div id="collapseOne" class="accordion-body collapse">
                             <div class="accordion-inner">
+
+                                <div class="form-group last">
+                                    <label class="control-label col-md-2">Hình timeline PC</label>
+                                    <div class="col-md-10">
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="fileupload-new thumbnail" style="width: 185px; height: auto;">
+                                                <img id="bannertop_img_1_output" src="{{ asset('public/upload/template/'.$timeline_img->whyus_timeline_pc) }}" alt="" style="width:100%; height:100%"/>
+                                            </div>
+                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                            <div>
+                                                <span class="btn btn-theme02 btn-file">
+                                                    <span class="fileupload-new"><i class="fa fa-paperclip"></i> Chọn hình ảnh</span>
+                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                    <input id="bannertop_img_1_input" type="file" name="whyus_timeline_pc" class="default" />
+                                                </span>
+                                                <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
+                                            </div>
+                                        </div>
+                                        <span class="label label-info">NOTE!</span>
+                                        <span>
+                                        Kích thước hình ảnh tối ưu 800px X 400px
+                                        </span>
+                                    </div>
+                                </div><br/><br/>
+
+
                                 <div class="number-table">
+                                    
 
                                     <h3>
                                         <span class="pull-right">
@@ -421,6 +448,7 @@
                                         <thead>
                                             <tr>
                                                 <th><i class="fa fa-camera"></i> Logo</th>
+                                                <th class="text-center">Ưu tiên</th>
                                     
                                                 <th class="text-center"><i class="fa fa-edit"></i> Tùy chỉnh</th>
                                             </tr>
@@ -433,17 +461,21 @@
                                                 <tr>
                                                     <td>
                                                         <div>
-                                                            <a href="">
+                                                            <a href="{{ asset('admin/whyus/customer/edit/'.$partner_item->img_id) }}">
                                                                 <img src="{{ asset('public/upload/info/'.$partner_item->img_src) }}" width="150px" style="margin-bottom: 10px"/>
                                                             </a>
                                                             <br/>
                                                         </div>
                                                     </td>
+
+                                                    <td class="text-center">
+                                                        {{ $partner_item->img_number }}
+                                                    </td>
                                         
                                                     <td class="text-center">
-                                                        {{-- <a href="{{ asset('admin/template/whyus/editcust/'.$item->img_id.'?type=customer-partner') }}" >
+                                                        <a href="{{ asset('admin/whyus/customer/edit/'.$partner_item->img_id) }}" >
                                                             <span class="btn btn-primary btn-xs" title="Chỉnh sửa"><i class="fa fa-pencil"></i></span>
-                                                        </a> --}}
+                                                        </a>
 
                                                         <a  rel="{{ $partner_item->img_id }}"
                                                             proname="Customer"

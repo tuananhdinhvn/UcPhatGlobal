@@ -365,20 +365,27 @@
     width: 100%;
     top: 6vh;
     height: 80vh;
-    background: #d2dd267a;
-    z-index: 1;
+    background: #e9ef97;
+    /* z-index: 10; */
+    opacity: 0.5;
 }
 .customer-cover{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    /* display: grid; */
+    /* grid-template-columns: repeat(6, 1fr); */
     grid-gap: 20px;
     padding: 20px;
+    width: 100%;
 }
 .customer-cover .customer-item{
-
+    height: 22vh;
+    position: relative;
 }
 .customer-cover .customer-item img{
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
 }
 
 

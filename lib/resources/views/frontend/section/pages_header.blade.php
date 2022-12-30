@@ -1,4 +1,7 @@
 <style>
+    .news-header-wrap{
+        height: 6vh;
+    }
     .news-link{
         color: rgb(90, 90, 90);
         text-align: left;
@@ -7,6 +10,21 @@
     .news-link:hover{
         color: #000;
         text-decoration: none;
+    }
+    .swipe-news-item{
+        height: 100%;
+    }
+    .swipe-news-item p{
+
+    }
+    .news-link{
+        height: 3vh;
+        font-family: 'Oswald', sans-serif;
+        font-style: italic;
+        color: #9b9898;
+    }
+    .news-link:hover{
+        color: #000;
     }
 </style>
 <header id="main-header" class="container-fluid">
@@ -33,37 +51,38 @@
                     On The News:<br/>
                 </span>
 
-
-                <div id="news-highlight" class="swiper newsSwiper">
-                    <div id="news-swiper-inside" class="swiper-wrapper">
-                        @foreach ($news_list as $news_item)
-                            <div class="news-item swiper-slide">
+                <div class="swiper newsSwiper" style="padding-top: 5px;">
+                    <div class="news-header-wrap swiper-wrapper">
+                        @foreach ($news_list->chunk(2) as $two)
+                        <div class="swipe-news-item swiper-slide">
+                            <p>
+                                 @foreach($two as $news_item)
                                 <a class="news-link" href="{{ asset('news/'.$news_item->blog_id) }}">
-                                @switch( Config::get('app.locale') )
-                                    @case('vi')
-                                        {{ str_limit($news_item->blog_ten_vi, 60) }}
-                                        @break
-                                    @case('en')
-                                        {{ str_limit($news_item->blog_ten_en, 60) }}
-                                        @break
-                                    @case('zh')
-                                        {{ str_limit($news_item->blog_ten_zh, 60) }}
-                                        @break
-                                    @case('ja')
-                                        {{ str_limit($news_item->blog_ten_ja, 60) }}
-                                        @break
-                                    @case('kr')
-                                        {{ str_limit($news_item->blog_ten_kr, 60) }}
-                                        @break
-                                @endswitch  
-                                </a> 
-                            </div>
-                            
+                                    @switch( Config::get('app.locale') )
+                                        @case('vi')
+                                            {{ str_limit($news_item->blog_ten_vi, 50) }}
+                                            @break
+                                        @case('en')
+                                            {{ str_limit($news_item->blog_ten_en, 50) }}
+                                            @break
+                                        @case('zh')
+                                            {{ str_limit($news_item->blog_ten_zh, 50) }}
+                                            @break
+                                        @case('ja')
+                                            {{ str_limit($news_item->blog_ten_ja, 50) }}
+                                            @break
+                                        @case('kr')
+                                            {{ str_limit($news_item->blog_ten_kr, 50) }}
+                                            @break
+                                    @endswitch  
+                                </a><br/>
+                                @endforeach
+                            </p>
+                        </div>
                         @endforeach
-
                     </div>
-                    <div id="news-swiper-dot" class="swiper-pagination" style="opacity: 0;"></div>
                 </div>
+
 
 
             </div>

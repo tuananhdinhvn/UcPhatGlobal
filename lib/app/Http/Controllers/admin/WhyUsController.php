@@ -22,6 +22,7 @@ class WhyUsController extends Controller
 {
 
     public function showWhyus(){
+        $data['timeline_img']       = LayoutHomepageModel::find(1);
         $data['achievement_list']   = ImageModel::where('img_type', 'achievement')->get();
         $data['technology_list']    = ImageModel::where('img_type', 'technology')->get();        
 
@@ -32,16 +33,26 @@ class WhyUsController extends Controller
         $data['certificate_list']   = ImageModel::where('img_type', 'certificate')->get();
 
         // Customer & Partner
-        $data['customer_list']      = ImageModel::where('img_type', 'customer-partner')->get();
+        $data['customer_list']      = ImageModel::where('img_type', 'customer-partner')->orderBy('img_number', 'asc')->get();
 
         return view('admin.display.why_us', $data);
     }
 
     public function postWhyUs(Request $request){
 
-        //Technology
         $layout                     = LayoutHomepageModel::find(1);
-        
+
+        //Achievement
+        if ($request->hasFile('whyus_timeline_pc')) {
+            File::delete('public/upload/template/'.$layout->whyus_timeline_pc);
+
+            $file                           = $request->file('whyus_timeline_pc');
+            $image_name                     = $file->getClientOriginalName();
+            $image_save_name                = time().$image_name;
+            $layout->whyus_timeline_pc      = $image_save_name;
+            $file->move('public/upload/template/', $image_save_name);
+        }
+        //Technology
         if ($request->hasFile('whyus_tech_img_left')) {
             File::delete('public/upload/template/'.$layout->whyus_tech_img_left);
 
@@ -255,14 +266,47 @@ class WhyUsController extends Controller
             $file->move('public/upload/info/', $image_save_name);
         }
 
-        $tech->img_type      = 'customer-partner';
+        $tech->img_number       = $request->img_number;
 
-        $tech->created_at    = Carbon::now();
-        $tech->updated_at    = Carbon::now();
+        $tech->img_type         = 'customer-partner';
+
+        $tech->created_at       = Carbon::now();
+        $tech->updated_at       = Carbon::now();
         $tech->save();     
 
         return redirect()->intended('admin/whyus');
     }
+
+
+    public function geteditCustomer(Request $request, $id){
+        $data['cust_item']          = ImageModel::find($id);
+
+        return view('admin.edit.edit_customer', $data);
+    }
+
+    public function posteditCustomer(Request $request, $id){
+
+        $cust                        = ImageModel::find($id);
+      
+        if ($request->hasFile('img_src')) {
+            File::delete('public/upload/info/'.$cust->img_src);
+
+            $file                   = $request->file('img_src');
+            $image_name             = $file->getClientOriginalName();
+            $image_save_name        = time().$image_name;
+            $cust->img_src   = $image_save_name;
+            $file->move('public/upload/info/', $image_save_name);
+        }
+
+        $cust->img_number       = $request->img_number;
+        
+        $cust->updated_at       = Carbon::now();
+        $cust->save();     
+
+        return redirect()->intended('admin/whyus');
+    }
+
+
 
     public function deleteCustomer(Request $request, $id){
         $customer            = ImageModel::find($id);

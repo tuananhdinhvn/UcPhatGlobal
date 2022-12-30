@@ -139,6 +139,9 @@ Route::group(['namespace' => 'admin'], function () {
             Route::get('customer/add', 'WhyUsController@getaddCustomer')->middleware('CheckLogout')->name('admin.whyus.add_customer');
             Route::post('customer/add', 'WhyUsController@postaddCustomer')->middleware('CheckLogout');
 
+            Route::get('customer/edit/{id}', 'WhyUsController@geteditCustomer')->middleware('CheckLogout')->name('admin.whyus.edit_customer');
+            Route::post('customer/edit/{id}', 'WhyUsController@posteditCustomer')->middleware('CheckLogout');
+
             Route::get('customer/delete/{id}', 'WhyUsController@deleteCustomer')->middleware('CheckLogout')->name('admin.whyus.delete_customer');
 
         });

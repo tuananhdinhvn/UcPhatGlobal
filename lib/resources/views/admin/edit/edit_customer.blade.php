@@ -1,5 +1,5 @@
 @extends('admin.master') 
-@section('title', 'Thêm Customer')
+@section('title', 'Cập nhật logo')
 
 @section('css')
 <!--External CSS-->
@@ -21,7 +21,7 @@
             <div class="col-lg-12">
 
                 <div style="padding: 20px 10px 0 10px;" class="form-panel">
-                    <h3>Thêm logo</h3>
+                    <h3>Cập nhật logo</h3>
                     <br/>
                     @include('error.note')
                     
@@ -32,7 +32,7 @@
                             <div class="col-md-10">
                                 <div class="fileupload fileupload-new" data-provides="fileupload">
                                     <div class="fileupload-new thumbnail" style="width: 185px; height: auto;">
-                                        <img id="bannertop_img_1_output" src="{{ asset('public/noimage.jpg') }}" alt="" style="width:100%; height:100%"/>
+                                        <img id="bannertop_img_1_output" src="{{ asset('public/upload/info/'.$cust_item->img_src) }}" alt="" style="width:100%; height:100%"/>
                                     </div>
                                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                                     <div>
@@ -51,20 +51,18 @@
                             </div>
                         </div><br/><br/>
 
-
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Ưu tiên:</label>
                             <div class="col-sm-2">
-                                <input type="number" name="img_number" class="form-control" >
+                                <input type="number" name="img_number" class="form-control" value="{{ $cust_item->img_number }}">
                             </div>
                         </div>
-
 
 
                        
 
                         <div class=" pull-right">
-                            <input style="width:100px;" type="submit" class="btn btn-primary" value="Thêm">
+                            <input style="width:100px;" type="submit" class="btn btn-primary" value="Cập nhật">
                             <a href="{{ asset('admin/whyus') }}">
                                 <input style="width:100px;" type="button" class="btn btn-danger" value="Hủy">
                             </a>

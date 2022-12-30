@@ -409,7 +409,6 @@
                 float: left;
                 text-align: center;
                 height: 100%;
-                text-shadow: 0 0 0.5px #000;
                 font-size: 1.5rem;
                 line-height: 30px;
                 position: relative;
@@ -421,7 +420,6 @@
                 font-size: 1.8rem;
                 letter-spacing: 2px;
                 line-height: 35px;
-                text-shadow: 0 0 1px #000;
             }
             .slogan-topline{
                 color: #224b84;
@@ -442,25 +440,30 @@
                 font-weight: 800;
                 font-family: 'Alexandria', sans-serif;
                 font-size: 1rem;
+                position: relative;
+                right: -10%;
             }
             .top-right-menu .corp-code .corp-text{
                 color: #e79d3e;
                 font-size: 1.4rem;
                 letter-spacing: 1px;
-                text-shadow: 0 0 0.1px #000;
+                font-style: italic;
             }
             .top-right-menu .corp-code .upg{
-                font-size: 3rem;
                 position: relative;
-                top: 0px;
-                font-weight: 800;
+                top: -5px;
+                font-family: 'Oswald', sans-serif;
+                font-weight: bold;
+                font-size: 35px;
+                color: #244d86;
+                position: relative;
             }
             .top-right-menu .news{
                 width: 65%;
                 float: right;
-                padding: 20px 30px;
+                padding-top: 10px;
                 font-style: italic;
-                opacity: 0.7;
+                opacity: 1;
                 font-weight: bold;
             }
 
@@ -507,11 +510,14 @@
             
         </style>
 
-        {{-- Google font --}}
+        <!-- Google font -->
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Alexandria&family=Varela+Round&display=swap');
-            /* font-family: 'Alexandria', sans-serif;
-            font-family: 'Varela Round', sans-serif; */
+            /* Topline slogan */
+            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+            /* Botline slogan */
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+            /* Main menu */
+            @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@500&display=swap');
         </style>
 
 
@@ -539,27 +545,60 @@
                             
                             <span class="upg">UPG</span>
                         </div>
+
+
+                        <style>
+                            .news-title-top{
+                                font-size: 20px;
+                                text-transform: capitalize;
+                                font-weight: bold;
+                                font-family: 'Alexandria', sans-serif;
+                                color: #e79d3e;
+                                font-style: italic;
+                                letter-spacing: 1px;
+                                text-align: center;
+                            }
+                            .news-swiper-list{
+                                height: 6vh;
+                                text-align: center;
+                            }
+                            .news-swiper-list .news-link-item{
+                                text-align: center;
+                                font-family: 'Oswald', sans-serif;
+                                font-style: italic;
+                                color: #9b9898;
+                            }
+                            .news-swiper-list .news-link-item:hover{
+                                color: #000;
+                            }
+                        </style>
                         <div class="news">
-                            News 1: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            <div class="news-title-top">
+                                On the news:
+                            </div>
+                            <div class="news-swiper-list">
+                                <a class="news-link-item" href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a><br/>
+                                <a class="news-link-item" href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="bot-menu">
                     <div class="main-menu-wraper container-fluid">
                         <div class="main-menu-item">
-                            <a href="{{ asset('/')}}">
+                            {{-- <a href="{{ asset('/')}}">
                                 Home
-                            </a>
+                            </a> --}}
                         </div>
                         <div class="main-menu-item">
-                            <a href="{{ asset('/#why-us')}}">
+                            {{-- <a href="{{ asset('/#why-us')}}">
                                 @lang('messages.menu_why_us')
-                            </a>
+                            </a> --}}
                         </div>
                         <div class="main-menu-item">
-                            <a href="{{ asset('/#our-service')}}">
+                            {{-- <a href="{{ asset('/#our-service')}}">
                                 @lang('messages.menu_services')
-                            </a>
+                            </a> --}}
                         </div>
                         <div class="main-menu-item">
                             <a href="{{ asset('/')}}">
@@ -568,19 +607,19 @@
                             </a>
                         </div>
                         <div class="main-menu-item">
-                            <a href="{{ asset('/#our-projects')}}">
+                            {{-- <a href="{{ asset('/#our-projects')}}">
                                 @lang('messages.menu_projects')
-                            </a>
+                            </a> --}}
                         </div>
                         <div class="main-menu-item">
-                            <a href="{{ asset('/#contact-us')}}">
+                            {{-- <a href="{{ asset('/#contact-us')}}">
                                 @lang('messages.menu_contact_us')
-                            </a>
+                            </a> --}}
                         </div>
                         <div class="main-menu-item">
-                            <a >
+                            {{-- <a >
                                 Language
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </div>

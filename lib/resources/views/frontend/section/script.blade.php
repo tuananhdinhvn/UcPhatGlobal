@@ -160,9 +160,9 @@
     var swiper = new Swiper(".newsSwiper", {
         direction: "vertical",
         spaceBetween: 30,
-        autoplay: true,
+        // autoplay: true,
         loop: true,
-        slidesPerView: 2,
+        slidesPerView: 1,
         mousewheel: true,
         pagination: {
             el: ".news-swiper-dot",
@@ -189,6 +189,23 @@
     });
 </script>
 
+
+<!-- customer slide -->
+<script>
+    var swiper = new Swiper(".customer_swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: ".customer-swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".customer-swiper-button-next",
+        prevEl: ".customer-swiper-button-prev",
+    },
+    });
+</script>
 
 <!-- Switch Service slide -->
 <script>

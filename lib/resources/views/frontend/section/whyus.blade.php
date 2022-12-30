@@ -12,6 +12,7 @@
             <div class="achievements-cover">
                 <div class="achievements">
 
+                    
                     @foreach ($achievement_list as $achievement_item)
                     <div class="achievement-item">
                         <img src="{{ asset('public/upload/info/'.$achievement_item->img_src) }}"/>
@@ -57,7 +58,7 @@
 
                 <div class="timeline-img-cover">
                     <div class="achievement-horizone-line"></div>
-                    <img src="https://minhglobal.com/public/upload/template/1670904893221213_TIMELINE 1.png" alt="">
+                    <img src="{{ asset('public/upload/template/'.$timeline_img->whyus_timeline_pc) }}" alt="">
                 </div>
 
                 {{-- <style>
@@ -204,14 +205,87 @@
         </div>
         
 
+        <style>
+            .customer-swiper-item{
+                background: #e9ef97;
+                height: 85vh;
+                z-index: 0;
+            }
+            .customer-cover{
+                display: grid;
+                grid-gap: 20px;
+                padding: 20px;
+                width: 100%;
+                background: #e9ef97;
+            }
+            .cust-slide-wrap{
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                background: #e9ef97;
+                grid-gap: 20px;
+                padding: 20px 0;
+                position: absolute;
+                top: 0;
+            }
+            .customer-zone-cover{
+                width: 100%;
+                height: 22vh;
+                background-repeat: no-repeat;
+                background-size: contain;
+                opacity: 0.7;
+            }
+            .customer-zone-cover img{
+                display: block;
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                background: #e9ef97;
+                object-fit: contain;
+            }
+        </style>
+
         <div class="customer-display whyus-display hidden">
             <div class="customer-blur"></div>
             <div class="customer-cover">
-                @foreach ($customer_list as $item)
-                    <div class="customer-item">
-                        <img src="{{ asset('public/upload/info/'.$item->img_src) }}"" class="customer-img"/>
+
+
+                <div class="swiper customer_swiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($customer_list->chunk(18) as $cust_screen)
+                        
+                            <div class="swiper-slide customer-swiper-item">
+                                <div class="cust-slide-wrap">
+                                    @foreach ($cust_screen as $item)
+                                    <div class="customer-zone-cover" style="background-image: url()">
+                                        <img src="{{ asset('public/upload/info/'.$item->img_src) }}" alt="">
+                                    </div>
+                                    @endforeach
+                                </div>
+                                
+                            </div>
+                        @endforeach
+
+
+
+
                     </div>
-                @endforeach
+                    <div class="customer-swiper-button-next"></div>
+                    <div class="customer-swiper-button-prev"></div>
+                    <div class="customer-swiper-pagination"></div>
+                </div>
+
+
+
+                {{-- @foreach ($customer_list->chunk(18) as $cust_screen)
+                    @foreach ($cust_screen as $item)
+                        <div class="customer-item">
+                            <img src="{{ asset('public/upload/info/'.$item->img_src) }}"" class="customer-img"/>
+                        </div>
+                    @endforeach
+                    https://minhglobal.com/public/upload/image/1670988082ICCI.png
+                    https://minhglobal.com/public/upload/image/1670988062GOLDEN%20BASE%201.png
+                @endforeach --}}
             </div>
         </div>
         
