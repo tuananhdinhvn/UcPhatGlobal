@@ -8,6 +8,47 @@
 
 @media only screen and (max-width: 768px) {
 
+    #welcome-mobile{
+        width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+    .welcome-pic{
+        width: 100%;
+        height: auto;
+    }
+    .blur-welcome{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #fff;
+        top: 0;
+        opacity: 0.4;
+        left: 0;
+    }
+    .mobile-slogan{
+        position: absolute;
+        top: 38%;
+        left: 10px;
+        right: 10px;
+        text-align: center;
+    }
+    .mobile-slogan .mobile-slogan-topline{
+        font-family: 'Oswald', sans-serif;
+        font-size: 35px;
+        color: #244d86;
+        text-shadow: 0 0 5px #fff;
+    }
+    .mobile-slogan .mobile-slogan-botline{
+        font-family: 'Nunito', sans-serif;
+        font-size: 33px;
+        font-style: italic;
+        letter-spacing: 2px;
+        color: #865f2b;
+        font-weight: bold;
+        text-shadow: 0 0 0px #fff;
+    }
+
     /* Index header */
     #main-header{
         display: none;
@@ -24,6 +65,8 @@
         width: 100%;
         box-shadow: 0 0 10px #b7b7b7;
         background: #fff;
+        z-index: 10;
+
     }
 
     .logo-index-wrap{
@@ -157,14 +200,13 @@
     #mobile-main-content{
         display: block;
         margin-top: 110px;
-        padding-top: 20px;
     }
 
     #whyus-mobile{
-
+        margin: 50px 0;
     }
 
-    /* Why us */
+    /* Whyus */
     .whyus-tab-header-mobile{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -232,7 +274,7 @@
         width: 100%;
     }
 
-    /* Why us technology */
+    /* Whyus technology */
     .whyus-tech-main-img{
         padding: 20px 10px;
         display: grid;
@@ -270,7 +312,7 @@
         text-align: center;
     }
 
-    /* Certificate */
+    /* Whyus Certificate */
     .whyus-certificate-slide-mobile{
         padding: 20px 10px;
     }
@@ -285,7 +327,7 @@
         padding-top: 10px;
     }
 
-    /* Customer */
+    /* Whyus Customer */
     .whyus-cust-slide-mobile{
         padding: 50px 10px;
     }
@@ -299,4 +341,243 @@
         text-align: center;
     }
 
+
+    /* Service */
+    #service-mobile{
+        margin: 50px 0;
+    }
+    .service-wrap-mobile{
+        position: relative;
+    }
+    .service-mobile-item{
+
+    }
+    .service-mobile-title{
+        text-align: center;
+        font-family: 'Alexandria', sans-serif;
+        font-size: 20px;
+        padding-bottom: 20px;
+        color: #244d86;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .service-mobile-main-odd-bg{
+        background: #244d86;
+        width: 100vw;
+        height: 300px;
+        /* padding: 10px; */
+        position: relative;
+    }
+    .service-mobile-main-odd-bg img{
+        float: left;
+        height: 240px;
+        position: absolute;
+        top: 30px;
+        width: 90%;
+    }
+    .service-mobile-description{
+        text-align: justify;
+        font-family: 'Alexandria', sans-serif;
+        padding: 10px;
+    }
+    .service-mobile-slide{
+
+    }
+    .service-mobile-slide-item{
+        text-align: center;
+        height: 260px;
+        margin: 20px 0;
+        display: grid;
+    }
+    .service-mobile-slide-item img{
+        width: 100%;
+        height: 200px;
+        object-fit: fill;
+    }
+    .service-mobile-slide-item h3{
+        padding: 10px 0;
+        font-family: 'Alexandria', sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .service-mobile-swiper-pagination{
+        position: absolute;
+        top: 20px;
+        background: transparent;
+        width: 100%;
+        z-index: 10;
+        height: 30px;
+        text-align: center;
+    }
+    .service-mobile-swiper-pagination .swiper-pagination-bullet{
+
+    }
+
+    .service-mobile-design{
+        display: grid;
+    }
+
+
+
+
+
+    /* Project */
+    #project-mobile{
+        margin: 40px 0;
+    }
+    .project-intro-mobile{
+        padding: 0 10px;
+        text-align: justify;
+        font-family: 'Alexandria', sans-serif;
+    }
+    .project-highlight-mobile{
+        font-family: 'Alexandria', sans-serif;
+        text-transform: capitalize;
+        text-align: center;
+        margin: 30px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        color: #244d86;
+        font-size: 16px;
+    }
+    .project-highlight-mobile .project-feature{
+        
+    }
+    .project-highlight-mobile .project-feature{
+        
+    }
+    .project-highlight-mobile .red-highlight{
+        color: red;
+    }
+    .project-list-mobile{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .project-list-mobile .project-index-item-mobile{
+        text-align: center;
+        font-family: 'Alexandria', sans-serif;
+    }
+    .project-index-item-mobile img{
+        width: 100%;
+    }
+    .project-index-mobile-name{
+        font-size: 20px;
+        padding: 10px 0;
+        color: #000;
+    }
+
+
+    /* Footer */
+    #footer-mobile{
+        height: 180px;
+        background: #2059a0;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .footer-logo-mobile{
+
+    }
+    .footer-logo-img-mobile{
+
+    }
+    .footer-logo-mobile img{
+        width: 150px;
+    }
+    .social-footer-mobile{
+
+    }
+    .social-footer-mobile i{
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border: 2px solid #fff;
+        padding: 13px;
+        border-radius: 50%;
+        font-size: 20px;
+        margin: 0 20px;
+    }
+
+
+    .contact-main-content{
+        padding: 0 10px;
+    }
+    .contact-info{
+
+    }
+    .contact-highlight{
+        font-size: 22px;
+        font-style: revert;
+        text-transform: capitalize;
+        font-family: 'Alexandria', sans-serif;
+        color: #244d86;
+        letter-spacing: 1px;
+    }
+    .contact-highlight .icon-before{
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .contact-main-info{
+        padding-bottom: 50px;
+    }
+    .contact-main-info .contact-info-block{
+        font-family: 'Alexandria', sans-serif;
+        text-align: justify;
+    }
+    .contact-main-info label{
+        font-family: 'Alexandria', sans-serif;
+        letter-spacing: 1px;
+        font-size: 19px;
+        padding-top: 15px;
+        margin: 0;
+    }
+    .contact-main-info i{
+        color: #c94645;
+        width: 30px;
+        /* text-align: center; */
+        font-size: 23px;
+    }
+    .contact-info-content{
+
+    }
+
+    .contact-mobile-form{
+        margin-bottom: 20px;
+    }
+    .contact-mobile-form .form-item{
+        font-family: 'Alexandria', sans-serif;
+        padding: 10px 0;
+    }
+    .contact-mobile-form .form-item label{
+        width: 100%;
+        margin: 0;
+    }
+    .contact-mobile-form .form-item input{
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .contact-mobile-form .form-item textarea{
+        width: 100%;
+        border-radius: 5px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+        padding: 5px;
+    }
+    .contact-mobile-form .form-item .submit-contact-btn{
+        font-size: 20px;
+        font-weight: bold;
+        background: #c12929;
+        color: #fff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
 }

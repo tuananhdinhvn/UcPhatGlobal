@@ -84,29 +84,27 @@
         
         <form action="save-data" id="contact-form" class="contact-main-form" class="g-mb-30" accept-charset="UTF-8" method="POST">
             <div class="contact-form-row">
-                <label for="">@lang('messages.contact_label_name'):</label>
+                <label for="cust_ten">@lang('messages.contact_label_name'):</label>
                 <input type="text" name="cust_ten" placeholder="@lang('messages.contact_placeholder_name')">
             </div>
             <div class="contact-form-row">
-                <label for="">@lang('messages.contact_label_phone'):</label>
+                <label for="cust_phone">@lang('messages.contact_label_phone'):</label>
                 <input type="text" name="cust_phone" placeholder="@lang('messages.contact_placeholder_phone')">
             </div>
             <div class="contact-form-row">
-                <label for="">@lang('messages.contact_label_email'):</label>
+                <label for="cust_email">@lang('messages.contact_label_email'):</label>
                 <input type="text" name="cust_email" placeholder="@lang('messages.contact_placeholder_email')">
             </div>
             <div class="contact-form-row">
-                <label for="">@lang('messages.contact_label_message'):</label>
+                <label for="cust_noidung">@lang('messages.contact_label_message'):</label>
                 <textarea name="cust_noidung" placeholder="@lang('messages.contact_placeholder_message')" cols="30" rows="5"></textarea>
             </div>
             <div class="contact-form-row">
-                <label for=""></label>
                 <div class="contact-form-submit">
                     <input class="submit-contact-btn" type="submit" value="@lang('messages.contact_submit_btn')">
                 </div>
             </div>
 
-            
 
         </form>
 

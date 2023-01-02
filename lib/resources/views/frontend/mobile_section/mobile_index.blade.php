@@ -1,5 +1,7 @@
 <div id="mobile-main-content">
 
+    @include('frontend.mobile_section.welcome')
+
     @include('frontend.mobile_section.whyus')
 
     @include('frontend.mobile_section.service')

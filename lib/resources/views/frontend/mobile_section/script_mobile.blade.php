@@ -94,6 +94,35 @@
         },
     });
 
+    // Service
+    var swiper = new Swiper(".service-swiper", {
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: ".service-mobile-swiper-pagination",
+        clickable: true,
+    },
+    });
+
+    // Service item slide
+    var swiper = new Swiper(".service-mobile-slide", {
+        effect: "coverflow",
+        grabCursor: true,
+        loop: true,
+        autoplay: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".service-mobile-slide-pagination",
+        },
+      });
 
 
 </script>
